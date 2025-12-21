@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* KrishiRakshak Agricultural Theme */
+    --background: 45 30% 97%;
+    --foreground: 150 25% 15%;
+
+    --card: 45 35% 98%;
+    --card-foreground: 150 25% 15%;
+
+    --popover: 45 35% 98%;
+    --popover-foreground: 150 25% 15%;
+
+    /* Primary - Deep Forest Green */
+    --primary: 152 45% 28%;
+    --primary-foreground: 45 30% 97%;
+
+    /* Secondary - Warm Terracotta */
+    --secondary: 25 55% 55%;
+    --secondary-foreground: 45 30% 97%;
+
+    /* Muted - Soft Sage */
+    --muted: 120 15% 90%;
+    --muted-foreground: 150 15% 40%;
+
+    /* Accent - Golden Wheat */
+    --accent: 42 85% 55%;
+    --accent-foreground: 150 25% 15%;
+
+    /* Destructive - Warning Red */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 45 30% 97%;
+
+    /* Border & Input */
+    --border: 120 15% 85%;
+    --input: 120 15% 88%;
+    --ring: 152 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 142 70% 40%;
+    --success-foreground: 45 30% 97%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 150 25% 15%;
+    --info: 199 89% 48%;
+    --info-foreground: 45 30% 97%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(152 45% 28%) 0%,
+      hsl(160 40% 35%) 50%,
+      hsl(42 85% 55%) 100%
+    );
+    --gradient-card: linear-gradient(
+      180deg,
+      hsl(45 35% 99%) 0%,
+      hsl(45 30% 96%) 100%
+    );
+    --gradient-nature: linear-gradient(
+      135deg,
+      hsl(120 30% 92%) 0%,
+      hsl(45 40% 95%) 100%
+    );
+    --gradient-sunset: linear-gradient(
+      135deg,
+      hsl(25 55% 55%) 0%,
+      hsl(42 85% 60%) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(150 25% 15% / 0.08);
+    --shadow-md: 0 8px 24px -6px hsl(150 25% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(150 25% 15% / 0.18);
+    --shadow-glow: 0 0 40px hsl(152 45% 28% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 150 20% 98%;
+    --sidebar-foreground: 150 25% 25%;
+    --sidebar-primary: 152 45% 28%;
+    --sidebar-primary-foreground: 45 30% 97%;
+    --sidebar-accent: 120 20% 94%;
+    --sidebar-accent-foreground: 150 25% 20%;
+    --sidebar-border: 120 15% 90%;
+    --sidebar-ring: 152 45% 28%;
+  }
+
+  .dark {
+    --background: 150 20% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 150 18% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 150 18% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 152 50% 45%;
+    --primary-foreground: 150 20% 8%;
+
+    --secondary: 25 50% 50%;
+    --secondary-foreground: 45 30% 95%;
+
+    --muted: 150 15% 18%;
+    --muted-foreground: 120 10% 60%;
+
+    --accent: 42 80% 50%;
+    --accent-foreground: 150 20% 8%;
+
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 150 12% 20%;
+    --input: 150 12% 22%;
+    --ring: 152 50% 45%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 150 20% 8%;
+    --warning: 38 85% 55%;
+    --warning-foreground: 150 20% 8%;
+    --info: 199 80% 55%;
+    --info-foreground: 150 20% 8%;
+
+    --sidebar-background: 150 18% 10%;
+    --sidebar-foreground: 45 25% 90%;
+    --sidebar-primary: 152 50% 45%;
+    --sidebar-primary-foreground: 150 20% 8%;
+    --sidebar-accent: 150 15% 16%;
+    --sidebar-accent-foreground: 45 25% 90%;
+    --sidebar-border: 150 12% 18%;
+    --sidebar-ring: 152 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background-image: var(--gradient-card);
+  }
+
+  .bg-gradient-nature {
+    background-image: var(--gradient-nature);
+  }
+
+  .bg-gradient-sunset {
+    background-image: var(--gradient-sunset);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+    background-size: 200% 200%;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .pattern-leaves {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-5 10-15 15-25 15 10 5 15 15 15 25 5-10 15-15 25-15-10-5-15-15-15-25z' fill='%23228B22' fill-opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

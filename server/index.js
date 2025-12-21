@@ -9,6 +9,12 @@ const { apiLimiter, authLimiter, aiLimiter } = require('./middleware/rateLimiter
 
 const app = express();
 
+// Trust proxy for production (Render, Heroku, etc.)
+// This fixes the X-Forwarded-For header issue with rate limiting
+if (process.env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+}
+
 // Import routes
 const authRoutes = require('./routes/auth');
 const cropRoutes = require('./routes/crops');

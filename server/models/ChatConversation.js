@@ -21,7 +21,7 @@ const chatConversationSchema = new mongoose.Schema({
     },
     language: {
         type: String,
-        enum: ['en', 'hi'],
+        enum: ['en', 'hi', 'en-GB', 'en-US', 'hi-IN'],
         default: 'en'
     },
     last_message_at: {

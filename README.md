@@ -290,19 +290,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 👥 Team
-
-<div align="center">
-
-| <img src="https://github.com/AnveshaSharma17.png" width="100" style="border-radius: 50%"> | <img src="https://github.com/harshchauhan.png" width="100" style="border-radius: 50%"> | <img src="https://github.com/vaishnavishukla.png" width="100" style="border-radius: 50%"> |
-|:---:|:---:|:---:|
-| **Anvesha Sharma** | **Harsh Chauhan** | **Vaishnavi Shukla** |
-| Frontend Developer | Backend Developer | UI/UX Designer |
-
-</div>
-
----
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

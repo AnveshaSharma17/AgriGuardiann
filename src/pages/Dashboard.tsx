@@ -508,6 +508,22 @@ const Dashboard = () => {
       .join(' ');
   };
 
+  // Get greeting based on current time
+  const getTimeBasedGreeting = () => {
+    const hour = new Date().getHours();
+    const isHindi = i18n.language === 'hi';
+
+    if (hour >= 5 && hour < 12) {
+      return isHindi ? 'सुप्रभात' : 'Good Morning';
+    } else if (hour >= 12 && hour < 17) {
+      return isHindi ? 'शुभ दोपहर' : 'Good Afternoon';
+    } else if (hour >= 17 && hour < 21) {
+      return isHindi ? 'शुभ संध्या' : 'Good Evening';
+    } else {
+      return isHindi ? 'शुभ रात्रि' : 'Good Night';
+    }
+  };
+
   const getAlertText = (alert: Alert) => {
     const isHindi = i18n.language === 'hi';
     return {
@@ -589,7 +605,7 @@ const Dashboard = () => {
                 <Menu className="w-6 h-6 text-[#0B0B0B]" />
               </button>
               <div>
-                <h1 className="font-display font-bold text-2xl text-[#0B0B0B]">{t('dashboard.greeting')}, {userName.split(' ')[0]}!</h1>
+                <h1 className="font-display font-bold text-2xl text-[#0B0B0B]">{getTimeBasedGreeting()}, {userName.split(' ')[0]}!</h1>
                 <p className="text-sm text-gray-500">{t('dashboard.overview')}</p>
               </div>
             </div>

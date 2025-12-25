@@ -14,10 +14,19 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Nunito", "system-ui", "sans-serif"],
-        display: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        sans: ["Inter", "Nunito", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Plus Jakarta Sans", "serif"],
       },
       colors: {
+        brand: {
+          lime: "#B9F261",
+          yellow: "#FFD24A",
+          cream: "#FAF4EA",
+          dark: "#0B0B0B",
+          text: "#111827",
+          muted: "#6B7280",
+          border: "#E5E7EB",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -79,7 +88,8 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         xl: "calc(var(--radius) + 4px)",
-        "2xl": "calc(var(--radius) + 8px)",
+        "2xl": "24px",
+        "3xl": "32px",
       },
       keyframes: {
         "accordion-down": {
@@ -109,6 +119,8 @@ export default {
         "card-hover": "var(--shadow-md)",
         glow: "var(--shadow-glow)",
         lg: "var(--shadow-lg)",
+        soft: "0 2px 8px rgba(0, 0, 0, 0.04)",
+        lift: "0 8px 24px rgba(0, 0, 0, 0.08)",
       },
     },
   },

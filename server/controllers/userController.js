@@ -23,7 +23,8 @@ exports.getProfile = async (req, res) => {
                 location: user.location,
                 language: user.language,
                 profileImage: user.profileImage,
-                roles: user.roles
+                roles: user.roles,
+                createdAt: user.createdAt
             }
         });
     } catch (error) {

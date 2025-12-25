@@ -17,6 +17,7 @@ import SprayLog from "./pages/SprayLog";
 import Community from "./pages/Community";
 import Profile from "./pages/Profile";
 import Advisory from "./pages/Advisory";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -41,6 +42,7 @@ const App = () => (
               <Route path="/community" element={<Community />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/advisory" element={<Advisory />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

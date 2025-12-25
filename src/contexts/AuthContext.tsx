@@ -9,10 +9,12 @@ interface User {
   roles: string[];
   location?: string;
   language?: string;
+  profileImage?: string;
 }
 
 interface AuthContextType {
   user: User | null;
+  profile: User | null; // Alias for backward compatibility
   loading: boolean;
   signUp: (email: string, password: string, name: string) => Promise<{ error: Error | null }>;
   signIn: (email: string, password: string) => Promise<{ error: Error | null }>;
@@ -52,7 +54,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signUp = async (email: string, password: string, name: string) => {
     try {
       const data = await apiRegister(email, password, name);
-      
+
       if (data.access_token && data.user) {
         // Store token and user
         localStorage.setItem('token', data.access_token);
@@ -60,7 +62,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(data.user);
         return { error: null };
       }
-      
+
       return { error: new Error('Registration failed') };
     } catch (error: any) {
       logger.error('Sign up error', error);
@@ -71,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signIn = async (email: string, password: string) => {
     try {
       const data = await apiLogin(email, password);
-      
+
       if (data.access_token && data.user) {
         // Store token and user
         localStorage.setItem('token', data.access_token);
@@ -79,7 +81,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(data.user);
         return { error: null };
       }
-      
+
       return { error: new Error('Login failed') };
     } catch (error: any) {
       logger.error('Sign in error', error);
@@ -97,12 +99,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     try {
       const data = await updateUserProfile(updates);
-      
+
       // Update local user state
       const updatedUser = { ...user, ...updates };
       setUser(updatedUser);
       localStorage.setItem('user', JSON.stringify(updatedUser));
-      
+
       return { error: null };
     } catch (error: any) {
       logger.error('Error updating profile', error);
@@ -113,6 +115,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider value={{
       user,
+      profile: user, // Alias for backward compatibility
       loading,
       signUp,
       signIn,

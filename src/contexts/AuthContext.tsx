@@ -39,7 +39,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       if (storedUser) {
         // Verify token is still valid by fetching profile
         const profileData = await getUserProfile();
-        setUser(profileData.user || storedUser);
+        // Handle different response formats from API
+        const userData = profileData.user || profileData;
+        const updatedUser = {
+          id: userData.id || userData._id || storedUser.id,
+          email: userData.email || storedUser.email,
+          name: userData.name || storedUser.name,
+          roles: userData.roles || storedUser.roles || [],
+          location: userData.location || storedUser.location,
+          language: userData.language || storedUser.language,
+          profileImage: userData.profileImage || storedUser.profileImage,
+        };
+        setUser(updatedUser);
+        // Also update localStorage with fresh data
+        localStorage.setItem('user', JSON.stringify(updatedUser));
       }
     } catch (error) {
       // Token invalid, clear auth

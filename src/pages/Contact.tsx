@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 // Animation Variants
 const fadeInUp = {
@@ -49,6 +50,7 @@ const staggerContainer = {
 };
 
 const Contact = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -61,7 +63,7 @@ const Contact = () => {
         e.preventDefault();
         // Handle form submission
         console.log("Form submitted:", formData);
-        alert("Thank you for your message! We will get back to you soon.");
+        alert(t('contact.form.successMessage'));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -74,25 +76,25 @@ const Contact = () => {
     const contactInfo = [
         {
             icon: Phone,
-            title: "Call Us",
+            title: t('contact.info.callUs'),
             details: ["+91 98765 43210", "+91 12345 67890"],
             color: "bg-[#B9F261]",
         },
         {
             icon: Mail,
-            title: "Email Us",
+            title: t('contact.info.emailUs'),
             details: ["support@krishirakshak.com", "info@krishirakshak.com"],
             color: "bg-[#FFD24A]",
         },
         {
             icon: MapPin,
-            title: "Visit Us",
+            title: t('contact.info.visitUs'),
             details: ["123 AgriTech Park, Sector 42", "Gurugram, Haryana 122001"],
             color: "bg-[#B9F261]",
         },
         {
             icon: Clock,
-            title: "Working Hours",
+            title: t('contact.info.workingHours'),
             details: ["Mon - Fri: 9:00 AM - 6:00 PM", "Sat: 10:00 AM - 4:00 PM"],
             color: "bg-[#FFD24A]",
         },
@@ -123,22 +125,22 @@ const Contact = () => {
                         {/* Center Navigation */}
                         <div className="hidden md:flex items-center gap-8">
                             <Link to="/" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                                Home
+                                {t('contact.nav.home')}
                             </Link>
                             <a href="/#about" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                                About
+                                {t('contact.nav.about')}
                             </a>
                             <a href="/#features" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                                Features
+                                {t('contact.nav.features')}
                             </a>
                             <a href="/#how-it-works" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                                How It Works
+                                {t('contact.nav.howItWorks')}
                             </a>
                             <a href="/#team" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                                Team
+                                {t('contact.nav.team')}
                             </a>
                             <Link to="/contact" className="text-sm font-medium text-[#FFD24A] transition-colors">
-                                Contact
+                                {t('contact.nav.contact')}
                             </Link>
                         </div>
 
@@ -151,7 +153,7 @@ const Contact = () => {
                                     whileTap={{ scale: 0.98 }}
                                     className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B9F261] text-[#0B0B0B] font-medium text-sm hover:bg-[#a8e050] transition-all shadow-lg"
                                 >
-                                    Get Quote
+                                    {t('contact.nav.getQuote')}
                                     <div className="w-6 h-6 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                                         <ArrowRight className="w-3.5 h-3.5 text-white" />
                                     </div>
@@ -182,7 +184,7 @@ const Contact = () => {
                             className="flex items-center gap-2 mb-6"
                         >
                             <span className="w-2 h-2 rounded-full bg-[#B9F261]"></span>
-                            <span className="text-sm font-medium text-[#B9F261] uppercase tracking-widest">Get In Touch</span>
+                            <span className="text-sm font-medium text-[#B9F261] uppercase tracking-widest">{t('contact.hero.label')}</span>
                         </motion.div>
 
                         <motion.h1
@@ -191,8 +193,8 @@ const Contact = () => {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 text-white"
                         >
-                            Let's Start a{" "}
-                            <span className="text-[#B9F261]">Conversation</span>
+                            {t('contact.hero.title')}{" "}
+                            <span className="text-[#B9F261]">{t('contact.hero.titleHighlight')}</span>
                         </motion.h1>
 
                         <motion.p
@@ -201,7 +203,7 @@ const Contact = () => {
                             transition={{ duration: 0.5, delay: 0.3 }}
                             className="text-lg text-white/70 max-w-xl leading-relaxed"
                         >
-                            Have questions about our AI-powered pest management solutions? We're here to help you protect your crops and maximize your yield.
+                            {t('contact.hero.description')}
                         </motion.p>
                     </div>
 
@@ -212,9 +214,9 @@ const Contact = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="flex items-center gap-2 mt-8 text-sm"
                     >
-                        <Link to="/" className="text-white/60 hover:text-white transition-colors">Home</Link>
+                        <Link to="/" className="text-white/60 hover:text-white transition-colors">{t('contact.hero.breadcrumbHome')}</Link>
                         <ChevronRight className="w-4 h-4 text-white/40" />
-                        <span className="text-[#B9F261]">Contact Us</span>
+                        <span className="text-[#B9F261]">{t('contact.hero.breadcrumbContact')}</span>
                     </motion.div>
                 </div>
             </section>
@@ -264,13 +266,13 @@ const Contact = () => {
                             viewport={{ once: true }}
                             className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100"
                         >
-                            <h2 className="font-display text-3xl font-bold text-[#0B0B0B] mb-2">Send Us a Message</h2>
-                            <p className="text-gray-600 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                            <h2 className="font-display text-3xl font-bold text-[#0B0B0B] mb-2">{t('contact.form.title')}</h2>
+                            <p className="text-gray-600 mb-8">{t('contact.form.description')}</p>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">Your Name</label>
+                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">{t('contact.form.yourName')}</label>
                                         <input
                                             type="text"
                                             name="name"
@@ -278,11 +280,11 @@ const Contact = () => {
                                             onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#B9F261] focus:outline-none focus:ring-2 focus:ring-[#B9F261]/20 transition-all"
-                                            placeholder="John Doe"
+                                            placeholder={t('contact.form.namePlaceholder')}
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">Email Address</label>
+                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">{t('contact.form.emailAddress')}</label>
                                         <input
                                             type="email"
                                             name="email"
@@ -290,25 +292,25 @@ const Contact = () => {
                                             onChange={handleChange}
                                             required
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#B9F261] focus:outline-none focus:ring-2 focus:ring-[#B9F261]/20 transition-all"
-                                            placeholder="john@example.com"
+                                            placeholder={t('contact.form.emailPlaceholder')}
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">Phone Number</label>
+                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">{t('contact.form.phoneNumber')}</label>
                                         <input
                                             type="tel"
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#B9F261] focus:outline-none focus:ring-2 focus:ring-[#B9F261]/20 transition-all"
-                                            placeholder="+91 98765 43210"
+                                            placeholder={t('contact.form.phonePlaceholder')}
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">Subject</label>
+                                        <label className="block text-sm font-medium text-[#0B0B0B] mb-2">{t('contact.form.subject')}</label>
                                         <select
                                             name="subject"
                                             value={formData.subject}
@@ -316,17 +318,17 @@ const Contact = () => {
                                             required
                                             className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#B9F261] focus:outline-none focus:ring-2 focus:ring-[#B9F261]/20 transition-all"
                                         >
-                                            <option value="">Select a subject</option>
-                                            <option value="general">General Inquiry</option>
-                                            <option value="support">Technical Support</option>
-                                            <option value="partnership">Partnership</option>
-                                            <option value="demo">Request Demo</option>
+                                            <option value="">{t('contact.form.selectSubject')}</option>
+                                            <option value="general">{t('contact.form.generalInquiry')}</option>
+                                            <option value="support">{t('contact.form.technicalSupport')}</option>
+                                            <option value="partnership">{t('contact.form.partnership')}</option>
+                                            <option value="demo">{t('contact.form.requestDemo')}</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-[#0B0B0B] mb-2">Your Message</label>
+                                    <label className="block text-sm font-medium text-[#0B0B0B] mb-2">{t('contact.form.yourMessage')}</label>
                                     <textarea
                                         name="message"
                                         value={formData.message}
@@ -334,7 +336,7 @@ const Contact = () => {
                                         required
                                         rows={5}
                                         className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-[#B9F261] focus:outline-none focus:ring-2 focus:ring-[#B9F261]/20 transition-all resize-none"
-                                        placeholder="Tell us about your farming needs..."
+                                        placeholder={t('contact.form.messagePlaceholder')}
                                     />
                                 </div>
 
@@ -344,7 +346,7 @@ const Contact = () => {
                                     whileTap={{ scale: 0.98 }}
                                     className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#B9F261] text-[#0B0B0B] font-semibold text-base hover:bg-[#a8e050] transition-all shadow-lg"
                                 >
-                                    Send Message
+                                    {t('contact.form.sendMessage')}
                                     <div className="w-7 h-7 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                                         <Send className="w-4 h-4 text-white" />
                                     </div>
@@ -382,8 +384,8 @@ const Contact = () => {
                                     }}
                                 />
                                 <div className="relative z-10">
-                                    <h3 className="font-display text-2xl font-bold text-white mb-4">Need Immediate Help?</h3>
-                                    <p className="text-white/70 mb-6">Our agricultural experts are available 24/7 to assist you with any pest emergencies.</p>
+                                    <h3 className="font-display text-2xl font-bold text-white mb-4">{t('contact.quickHelp.title')}</h3>
+                                    <p className="text-white/70 mb-6">{t('contact.quickHelp.description')}</p>
 
                                     <div className="flex flex-col sm:flex-row gap-4">
                                         <a href="tel:+919876543210" className="flex-1">
@@ -393,7 +395,7 @@ const Contact = () => {
                                             >
                                                 <Phone className="w-5 h-5" />
                                                 <div>
-                                                    <p className="text-xs opacity-70">Call Now</p>
+                                                    <p className="text-xs opacity-70">{t('contact.quickHelp.callNow')}</p>
                                                     <p className="font-bold">+91 98765 43210</p>
                                                 </div>
                                             </motion.div>
@@ -405,8 +407,8 @@ const Contact = () => {
                                             >
                                                 <MessageCircle className="w-5 h-5" />
                                                 <div>
-                                                    <p className="text-xs opacity-70">Live Chat</p>
-                                                    <p className="font-bold">Start Chat</p>
+                                                    <p className="text-xs opacity-70">{t('contact.quickHelp.liveChat')}</p>
+                                                    <p className="font-bold">{t('contact.quickHelp.startChat')}</p>
                                                 </div>
                                             </motion.div>
                                         </Link>
@@ -429,10 +431,10 @@ const Contact = () => {
                 />
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <h2 className="font-display text-3xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                        Ready to Protect Your Crops?
+                        {t('contact.cta.title')}
                     </h2>
                     <p className="text-white/70 max-w-2xl mx-auto mb-8">
-                        Join thousands of farmers who trust KrishiRakshak for AI-powered pest management solutions.
+                        {t('contact.cta.description')}
                     </p>
                     <Link to="/register">
                         <motion.button
@@ -440,7 +442,7 @@ const Contact = () => {
                             whileTap={{ scale: 0.98 }}
                             className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#B9F261] text-[#0B0B0B] font-semibold text-lg hover:bg-[#a8e050] transition-all shadow-lg"
                         >
-                            Get Started Free
+                            {t('contact.cta.button')}
                             <div className="w-8 h-8 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                                 <ArrowRight className="w-5 h-5 text-white" />
                             </div>
@@ -478,7 +480,7 @@ const Contact = () => {
                                 <span className="font-display font-bold text-xl text-white">KrishiRakshak</span>
                             </div>
                             <p className="text-white/60 text-sm leading-relaxed mb-6">
-                                AI-powered pest management for smarter, sustainable farming. Empowering farmers with cutting-edge technology.
+                                {t('landing.footer.description')}
                             </p>
                             {/* Social Icons */}
                             <div className="flex gap-3">
@@ -499,43 +501,43 @@ const Contact = () => {
 
                         {/* Quick Links */}
                         <div>
-                            <h4 className="font-display font-bold text-white mb-6">Quick Links</h4>
+                            <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.quickLinks')}</h4>
                             <ul className="space-y-3">
-                                <li><Link to="/" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Home</Link></li>
-                                <li><a href="/#about" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />About Us</a></li>
-                                <li><a href="/#features" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Features</a></li>
-                                <li><a href="/#how-it-works" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />How It Works</a></li>
-                                <li><a href="/#team" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Our Team</a></li>
+                                <li><Link to="/" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.home')}</Link></li>
+                                <li><a href="/#about" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.aboutUs')}</a></li>
+                                <li><a href="/#features" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.features')}</a></li>
+                                <li><a href="/#how-it-works" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.howItWorks')}</a></li>
+                                <li><a href="/#team" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.team')}</a></li>
                             </ul>
                         </div>
 
                         {/* Services */}
                         <div>
-                            <h4 className="font-display font-bold text-white mb-6">Services</h4>
+                            <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.services')}</h4>
                             <ul className="space-y-3">
-                                <li><Link to="/identify" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Pest Detection</Link></li>
-                                <li><Link to="/chat" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />AI Chat Assistant</Link></li>
-                                <li><Link to="/alerts" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Weather Alerts</Link></li>
-                                <li><Link to="/advisory" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Expert Advisory</Link></li>
-                                <li><Link to="/community" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Community</Link></li>
+                                <li><Link to="/identify" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.pestDetection')}</Link></li>
+                                <li><Link to="/chat" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.aiChatAssistant')}</Link></li>
+                                <li><Link to="/alerts" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.weatherAlerts')}</Link></li>
+                                <li><Link to="/advisory" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.expertAdvisory')}</Link></li>
+                                <li><Link to="/community" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.community')}</Link></li>
                             </ul>
                         </div>
 
                         {/* Newsletter */}
                         <div>
-                            <h4 className="font-display font-bold text-white mb-6">Stay Updated</h4>
-                            <p className="text-white/60 text-sm mb-4">Subscribe to our newsletter for the latest updates on pest management.</p>
+                            <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.stayUpdated')}</h4>
+                            <p className="text-white/60 text-sm mb-4">{t('landing.footer.newsletterDesc')}</p>
                             <div className="space-y-3">
                                 <input
                                     type="email"
-                                    placeholder="your@email.com"
+                                    placeholder={t('landing.footer.emailPlaceholder')}
                                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#B9F261] focus:bg-white/10 transition-all"
                                 />
                                 <Button className="w-full rounded-xl py-3 bg-[#B9F261] text-[#0B0B0B] hover:bg-[#a8e050] font-semibold">
-                                    Subscribe Now
+                                    {t('landing.footer.subscribeNow')}
                                 </Button>
                             </div>
-                            <p className="text-white/40 text-xs mt-3">We respect your privacy. Unsubscribe anytime.</p>
+                            <p className="text-white/40 text-xs mt-3">{t('landing.footer.privacyNote')}</p>
                         </div>
                     </div>
 
@@ -543,12 +545,12 @@ const Contact = () => {
                     <div className="pt-8 border-t border-white/10">
                         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                             <p className="text-white/40 text-sm">
-                                © 2025 KrishiRakshak. All rights reserved.
+                                {t('landing.footer.copyright')}
                             </p>
                             <div className="flex gap-6 text-white/40 text-sm">
-                                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                                <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+                                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.privacyPolicy')}</a>
+                                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.termsOfService')}</a>
+                                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.cookiePolicy')}</a>
                             </div>
                         </div>
                     </div>

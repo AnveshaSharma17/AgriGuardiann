@@ -146,6 +146,12 @@ const Community = () => {
   const { t } = useTranslation();
 
   const getAuthToken = () => {
+    // Try direct token first (set by AuthContext)
+    const directToken = localStorage.getItem('token');
+    if (directToken) {
+      return directToken;
+    }
+    // Fallback to session format
     const session = localStorage.getItem('session');
     if (session) {
       try {

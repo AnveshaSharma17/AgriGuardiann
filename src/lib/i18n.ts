@@ -21,37 +21,256 @@ const resources = {
       },
       // Landing Page
       landing: {
+        nav: {
+          home: "Home",
+          about: "About",
+          features: "Features",
+          howItWorks: "How It Works",
+          team: "Team",
+          contact: "Contact",
+          signIn: "Sign In",
+        },
         hero: {
-          title: "Protect Your Crops with AI-Powered Pest Management",
-          subtitle:
-            "KrishiRakshak helps Indian farmers identify pests, get expert advice, and manage crops effectively using smart technology.",
-          cta: "Get Started Free",
-          login: "Already a member? Login",
+          rating: "100+ Reviews",
+          heading: "Smart Pest Solutions for",
+          headingItalic: "Homes & Farms",
+          description: "KrishiRakshak delivers AI-powered pest identification and management solutions for farms and gardens. Easy setup, lasting results.",
+          getStarted: "Get Started",
+          viewFeatures: "View Features",
+          chips: {
+            warranty: "25-Year Panel Warranty",
+            certified: "Certified Installers",
+            consultation: "Free Energy Consultation",
+          },
+        },
+        stats: {
+          farmersHelped: "Farmers Helped",
+          pestsIdentified: "Pests Identified",
+          accuracyRate: "Accuracy Rate",
+          aiSupport: "AI Support",
+        },
+        partners: {
+          label: "Partners",
+          title: "Trusted by Top Agriculture Leaders",
         },
         features: {
-          title: "Features",
-          identify: {
-            title: "AI Pest Identification",
-            description:
-              "Upload photos or describe symptoms to instantly identify pests affecting your crops.",
+          label: "Pest & Crop Solutions",
+          title: "Pest Solutions for Every Farm",
+          description: "We provide complete pest management services for farms & gardens, including identification, advisories, & preventive monitoring.",
+          aiDetection: {
+            title: "AI Pest Detection",
+            description: "Upload crop images and get instant AI-powered pest identification with 90%+ accuracy.",
           },
-          advisory: {
-            title: "Expert Advisory",
-            description:
-              "Get IPM-based recommendations: prevention first, chemicals as last resort.",
+          smartAdvisories: {
+            title: "Smart Advisories",
+            description: "Receive personalized treatment plans following IPM principles for sustainable farming.",
           },
-          alerts: {
-            title: "Risk Alerts",
-            description:
-              "Receive location-based pest warnings and weather advisories.",
-          },
-          community: {
-            title: "Farmer Community",
-            description:
-              "Connect with other farmers, share experiences, and get expert help.",
+          realTimeAlerts: {
+            title: "Real-time Alerts",
+            description: "Weather-based pest risk alerts help you take preventive action before damage occurs.",
           },
         },
+        moreFeatures: {
+          label: "Platform Features",
+          title: "Everything You Need",
+          description: "Comprehensive tools and features to protect your crops and maximize yield.",
+          pestLibrary: {
+            title: "Pest Library",
+            description: "Access comprehensive database of 500+ pests with detailed identification guides.",
+          },
+          multiLanguage: {
+            title: "Multi-language Support",
+            description: "Available in Hindi, English, and regional languages for all Indian farmers.",
+          },
+          yieldAnalytics: {
+            title: "Yield Analytics",
+            description: "Track your crop health and predict yield improvements with AI insights.",
+          },
+          expertCommunity: {
+            title: "Expert Community",
+            description: "Connect with agricultural experts and fellow farmers for peer support.",
+          },
+          certifiedSolutions: {
+            title: "Certified Solutions",
+            description: "All recommendations follow government-approved IPM guidelines.",
+          },
+          aiChat: {
+            title: "24/7 AI Chat",
+            description: "Get instant answers to your farming queries anytime, anywhere.",
+          },
+        },
+        about: {
+          label: "About KrishiRakshak",
+          title: "A Team Focused on Clean Agriculture",
+          completedProjects: "Completed Projects",
+          benefits: {
+            b1: "From consultation to installation, we're connected throughout the process.",
+            b2: "Over a decade of agricultural AI expertise applied to every project.",
+            b3: "We work with reliable technology and sustainable farming practices.",
+            b4: "Our team follows strict safety and quality standards.",
+          },
+          moreDetails: "More Details",
+        },
+        howItWorks: {
+          label: "Our Process",
+          title: "How It Works",
+          description: "Get pest identification and expert recommendations in three simple steps.",
+          step1: {
+            title: "Upload Image",
+            description: "Take a photo of affected crops or describe symptoms using our guided wizard.",
+          },
+          step2: {
+            title: "AI Analysis",
+            description: "Our AI analyzes the image to identify pests with confidence scores and symptoms.",
+          },
+          step3: {
+            title: "Get Advisory",
+            description: "Receive detailed IPM-based treatment recommendations tailored to your crop.",
+          },
+        },
+        team: {
+          label: "Our Team",
+          title: "Meet the Experts",
+          description: "Our team combines deep agricultural expertise with cutting-edge AI technology.",
+          member1: {
+            name: "Anvesha Sharma",
+            role: "Frontend Developer",
+            bio: "Architecting robust backend apis for real-time pests data.",
+          },
+          member2: {
+            name: "Harsh Chauhan",
+            role: "Backend Developer",
+            bio: "Building clean and responsive UI for smooth user experience.",
+          },
+          member3: {
+            name: "Vaishnavi Shukla",
+            role: "UI UX Designer",
+            bio: "Designing cinematic UI and intuitive design for smooth user experience",
+          },
+        },
+        testimonials: {
+          label: "Testimonials",
+          title: "What Farmers Say",
+          description: "Hear from farmers who have transformed their pest management with our AI solutions.",
+          t1: {
+            name: "Rajesh Kumar",
+            role: "Wheat Farmer, Punjab",
+            quote: "KrishiRakshak saved my entire wheat crop from a pest outbreak. The AI identified the problem before it spread!",
+          },
+          t2: {
+            name: "Priya Sharma",
+            role: "Cotton Farmer, Gujarat",
+            quote: "The real-time alerts helped me take preventive action. My yield increased by 30% this season.",
+          },
+          t3: {
+            name: "Amit Patel",
+            role: "Rice Farmer, Bihar",
+            quote: "Easy to use, accurate results. This is exactly what Indian farmers needed.",
+          },
+        },
+        faq: {
+          label: "FAQ",
+          title: "Frequently Asked Questions",
+          q1: {
+            question: "How accurate is the AI pest detection?",
+            answer: "Our AI achieves 95%+ accuracy on common agricultural pests. The system continuously learns from new data to improve detection rates.",
+          },
+          q2: {
+            question: "What crops does KrishiRakshak support?",
+            answer: "We support all major Indian crops including wheat, rice, cotton, sugarcane, vegetables, and fruits. New crops are added regularly.",
+          },
+          q3: {
+            question: "Is there a mobile app available?",
+            answer: "Yes! Our mobile app is available for both Android and iOS, allowing you to identify pests directly from the field.",
+          },
+          q4: {
+            question: "How do I get started?",
+            answer: "Simply register for a free account, upload an image of your affected crop, and get instant AI-powered recommendations.",
+          },
+        },
+        cta: {
+          title: "Ready to Transform Your Farm With AI?",
+          button: "Get Free Assessment",
+        },
+        footer: {
+          description: "AI-powered pest management for smarter, sustainable farming. Empowering farmers with cutting-edge technology.",
+          quickLinks: "Quick Links",
+          aboutUs: "About Us",
+          services: "Services",
+          pestDetection: "Pest Detection",
+          aiChatAssistant: "AI Chat Assistant",
+          weatherAlerts: "Weather Alerts",
+          expertAdvisory: "Expert Advisory",
+          community: "Community",
+          stayUpdated: "Stay Updated",
+          newsletterDesc: "Subscribe to our newsletter for the latest updates on pest management.",
+          emailPlaceholder: "your@email.com",
+          subscribeNow: "Subscribe Now",
+          privacyNote: "We respect your privacy. Unsubscribe anytime.",
+          copyright: "© 2025 KrishiRakshak. All rights reserved.",
+          privacyPolicy: "Privacy Policy",
+          termsOfService: "Terms of Service",
+          cookiePolicy: "Cookie Policy",
+        },
         selectLanguage: "Select Language",
+      },
+      // Contact Page
+      contact: {
+        nav: {
+          home: "Home",
+          about: "About",
+          features: "Features",
+          howItWorks: "How It Works",
+          team: "Team",
+          contact: "Contact",
+          getQuote: "Get Quote",
+        },
+        hero: {
+          label: "Get In Touch",
+          title: "Let's Start a",
+          titleHighlight: "Conversation",
+          description: "Have questions about our AI-powered pest management solutions? We're here to help you protect your crops and maximize your yield.",
+          breadcrumbHome: "Home",
+          breadcrumbContact: "Contact Us",
+        },
+        info: {
+          callUs: "Call Us",
+          emailUs: "Email Us",
+          visitUs: "Visit Us",
+          workingHours: "Working Hours",
+        },
+        form: {
+          title: "Send Us a Message",
+          description: "Fill out the form below and we'll get back to you within 24 hours.",
+          yourName: "Your Name",
+          namePlaceholder: "John Doe",
+          emailAddress: "Email Address",
+          emailPlaceholder: "john@example.com",
+          phoneNumber: "Phone Number",
+          phonePlaceholder: "+91 98765 43210",
+          subject: "Subject",
+          selectSubject: "Select a subject",
+          generalInquiry: "General Inquiry",
+          technicalSupport: "Technical Support",
+          partnership: "Partnership",
+          requestDemo: "Request Demo",
+          yourMessage: "Your Message",
+          messagePlaceholder: "Tell us about your farming needs...",
+          sendMessage: "Send Message",
+          successMessage: "Thank you for your message! We will get back to you soon.",
+        },
+        quickHelp: {
+          title: "Need Immediate Help?",
+          description: "Our agricultural experts are available 24/7 to assist you with any pest emergencies.",
+          callNow: "Call Now",
+          liveChat: "Live Chat",
+          startChat: "Start Chat",
+        },
+        cta: {
+          title: "Ready to Protect Your Crops?",
+          description: "Join thousands of farmers who trust KrishiRakshak for AI-powered pest management solutions.",
+          button: "Get Started Free",
+        },
       },
       // Auth
       auth: {
@@ -224,36 +443,256 @@ const resources = {
       },
       // Landing Page
       landing: {
+        nav: {
+          home: "होम",
+          about: "हमारे बारे में",
+          features: "विशेषताएं",
+          howItWorks: "कैसे काम करता है",
+          team: "टीम",
+          contact: "संपर्क",
+          signIn: "साइन इन",
+        },
         hero: {
-          title: "AI-पावर्ड कीट प्रबंधन से अपनी फसलों की रक्षा करें",
-          subtitle:
-            "कृषिरक्षक भारतीय किसानों को कीटों की पहचान करने, विशेषज्ञ सलाह प्राप्त करने और स्मार्ट तकनीक का उपयोग करके फसलों का प्रभावी ढंग से प्रबंधन करने में मदद करता है।",
-          cta: "मुफ्त शुरू करें",
-          login: "पहले से सदस्य हैं? लॉगिन करें",
+          rating: "100+ समीक्षाएं",
+          heading: "स्मार्ट कीट समाधान",
+          headingItalic: "घर और खेत के लिए",
+          description: "कृषिरक्षक खेतों और बगीचों के लिए AI-संचालित कीट पहचान और प्रबंधन समाधान प्रदान करता है। आसान सेटअप, स्थायी परिणाम।",
+          getStarted: "शुरू करें",
+          viewFeatures: "विशेषताएं देखें",
+          chips: {
+            warranty: "25-वर्ष पैनल वारंटी",
+            certified: "प्रमाणित इंस्टॉलर",
+            consultation: "मुफ्त ऊर्जा परामर्श",
+          },
+        },
+        stats: {
+          farmersHelped: "किसानों की मदद",
+          pestsIdentified: "कीट पहचाने गए",
+          accuracyRate: "सटीकता दर",
+          aiSupport: "AI सहायता",
+        },
+        partners: {
+          label: "साझेदार",
+          title: "शीर्ष कृषि नेताओं द्वारा विश्वसनीय",
         },
         features: {
-          title: "विशेषताएं",
-          identify: {
+          label: "कीट और फसल समाधान",
+          title: "हर खेत के लिए कीट समाधान",
+          description: "हम खेतों और बगीचों के लिए पूर्ण कीट प्रबंधन सेवाएं प्रदान करते हैं, जिसमें पहचान, सलाह और निवारक निगरानी शामिल है।",
+          aiDetection: {
             title: "AI कीट पहचान",
-            description:
-              "अपनी फसलों को प्रभावित करने वाले कीटों की तुरंत पहचान के लिए फोटो अपलोड करें या लक्षणों का वर्णन करें।",
+            description: "फसल की तस्वीरें अपलोड करें और 90%+ सटीकता के साथ तुरंत AI-संचालित कीट पहचान प्राप्त करें।",
           },
-          advisory: {
-            title: "विशेषज्ञ सलाह",
-            description:
-              "IPM-आधारित सिफारिशें प्राप्त करें: पहले रोकथाम, रसायन अंतिम उपाय के रूप में।",
+          smartAdvisories: {
+            title: "स्मार्ट सलाह",
+            description: "टिकाऊ खेती के लिए IPM सिद्धांतों का पालन करते हुए व्यक्तिगत उपचार योजनाएं प्राप्त करें।",
           },
-          alerts: {
-            title: "जोखिम चेतावनी",
-            description: "स्थान-आधारित कीट चेतावनी और मौसम सलाह प्राप्त करें।",
-          },
-          community: {
-            title: "किसान समुदाय",
-            description:
-              "अन्य किसानों से जुड़ें, अनुभव साझा करें और विशेषज्ञ सहायता प्राप्त करें।",
+          realTimeAlerts: {
+            title: "रीयल-टाइम अलर्ट",
+            description: "मौसम-आधारित कीट जोखिम अलर्ट नुकसान होने से पहले निवारक कार्रवाई करने में मदद करते हैं।",
           },
         },
+        moreFeatures: {
+          label: "प्लेटफॉर्म विशेषताएं",
+          title: "आपको जो कुछ भी चाहिए",
+          description: "अपनी फसलों की रक्षा करने और उपज को अधिकतम करने के लिए व्यापक उपकरण और सुविधाएं।",
+          pestLibrary: {
+            title: "कीट पुस्तकालय",
+            description: "विस्तृत पहचान गाइड के साथ 500+ कीटों के व्यापक डेटाबेस तक पहुंच।",
+          },
+          multiLanguage: {
+            title: "बहु-भाषा समर्थन",
+            description: "सभी भारतीय किसानों के लिए हिंदी, अंग्रेजी और क्षेत्रीय भाषाओं में उपलब्ध।",
+          },
+          yieldAnalytics: {
+            title: "उपज विश्लेषिकी",
+            description: "AI अंतर्दृष्टि के साथ अपनी फसल स्वास्थ्य को ट्रैक करें और उपज सुधार की भविष्यवाणी करें।",
+          },
+          expertCommunity: {
+            title: "विशेषज्ञ समुदाय",
+            description: "कृषि विशेषज्ञों और साथी किसानों से जुड़ें।",
+          },
+          certifiedSolutions: {
+            title: "प्रमाणित समाधान",
+            description: "सभी सिफारिशें सरकार-अनुमोदित IPM दिशानिर्देशों का पालन करती हैं।",
+          },
+          aiChat: {
+            title: "24/7 AI चैट",
+            description: "कभी भी, कहीं भी अपने खेती के प्रश्नों के तुरंत उत्तर प्राप्त करें।",
+          },
+        },
+        about: {
+          label: "कृषिरक्षक के बारे में",
+          title: "स्वच्छ कृषि पर केंद्रित टीम",
+          completedProjects: "पूर्ण परियोजनाएं",
+          benefits: {
+            b1: "परामर्श से स्थापना तक, हम पूरी प्रक्रिया में जुड़े रहते हैं।",
+            b2: "हर परियोजना में एक दशक से अधिक की कृषि AI विशेषज्ञता।",
+            b3: "हम विश्वसनीय तकनीक और टिकाऊ खेती प्रथाओं के साथ काम करते हैं।",
+            b4: "हमारी टीम सख्त सुरक्षा और गुणवत्ता मानकों का पालन करती है।",
+          },
+          moreDetails: "अधिक जानकारी",
+        },
+        howItWorks: {
+          label: "हमारी प्रक्रिया",
+          title: "यह कैसे काम करता है",
+          description: "तीन सरल चरणों में कीट पहचान और विशेषज्ञ सिफारिशें प्राप्त करें।",
+          step1: {
+            title: "छवि अपलोड करें",
+            description: "प्रभावित फसलों की फोटो लें या हमारे गाइडेड विज़ार्ड का उपयोग करके लक्षणों का वर्णन करें।",
+          },
+          step2: {
+            title: "AI विश्लेषण",
+            description: "हमारा AI विश्वास स्कोर और लक्षणों के साथ कीटों की पहचान करने के लिए छवि का विश्लेषण करता है।",
+          },
+          step3: {
+            title: "सलाह प्राप्त करें",
+            description: "अपनी फसल के अनुरूप विस्तृत IPM-आधारित उपचार सिफारिशें प्राप्त करें।",
+          },
+        },
+        team: {
+          label: "हमारी टीम",
+          title: "विशेषज्ञों से मिलें",
+          description: "हमारी टीम गहन कृषि विशेषज्ञता को अत्याधुनिक AI तकनीक के साथ जोड़ती है।",
+          member1: {
+            name: "डॉ. अनन्या वर्मा",
+            role: "सह-संस्थापक और CEO",
+            bio: "कृषि अनुसंधान में 15+ वर्षों के साथ पूर्व ICAR वैज्ञानिक। कीट विज्ञान में PhD।",
+          },
+          member2: {
+            name: "विक्रम सिंह",
+            role: "CTO और AI लीड",
+            bio: "पूर्व Google ML इंजीनियर। प्रतिदिन 10M+ छवियों को प्रोसेस करने वाली AI प्रणालियां बनाईं।",
+          },
+          member3: {
+            name: "मीरा कृष्णन",
+            role: "कृषि प्रमुख",
+            bio: "कृषि विस्तार विशेषज्ञ। पूरे भारत में 50,000+ किसानों के साथ काम किया।",
+          },
+        },
+        testimonials: {
+          label: "प्रशंसापत्र",
+          title: "किसान क्या कहते हैं",
+          description: "उन किसानों की बात सुनें जिन्होंने हमारे AI समाधानों से अपने कीट प्रबंधन को बदल दिया है।",
+          t1: {
+            name: "राजेश कुमार",
+            role: "गेहूं किसान, पंजाब",
+            quote: "कृषिरक्षक ने मेरी पूरी गेहूं की फसल को कीट प्रकोप से बचाया। AI ने समस्या फैलने से पहले पहचान ली!",
+          },
+          t2: {
+            name: "प्रिया शर्मा",
+            role: "कपास किसान, गुजरात",
+            quote: "रीयल-टाइम अलर्ट ने मुझे निवारक कार्रवाई करने में मदद की। इस सीजन मेरी उपज 30% बढ़ी।",
+          },
+          t3: {
+            name: "अमित पटेल",
+            role: "चावल किसान, बिहार",
+            quote: "उपयोग में आसान, सटीक परिणाम। यह वही है जो भारतीय किसानों को चाहिए था।",
+          },
+        },
+        faq: {
+          label: "FAQ",
+          title: "अक्सर पूछे जाने वाले प्रश्न",
+          q1: {
+            question: "AI कीट पहचान कितनी सटीक है?",
+            answer: "हमारा AI आम कृषि कीटों पर 95%+ सटीकता प्राप्त करता है। सिस्टम पहचान दरों में सुधार के लिए नए डेटा से लगातार सीखता है।",
+          },
+          q2: {
+            question: "कृषिरक्षक कौन सी फसलों का समर्थन करता है?",
+            answer: "हम गेहूं, चावल, कपास, गन्ना, सब्जियां और फलों सहित सभी प्रमुख भारतीय फसलों का समर्थन करते हैं। नई फसलें नियमित रूप से जोड़ी जाती हैं।",
+          },
+          q3: {
+            question: "क्या कोई मोबाइल ऐप उपलब्ध है?",
+            answer: "हां! हमारा मोबाइल ऐप Android और iOS दोनों के लिए उपलब्ध है, जिससे आप सीधे खेत से कीटों की पहचान कर सकते हैं।",
+          },
+          q4: {
+            question: "मैं कैसे शुरू करूं?",
+            answer: "बस एक मुफ्त खाता बनाएं, अपनी प्रभावित फसल की छवि अपलोड करें, और तुरंत AI-संचालित सिफारिशें प्राप्त करें।",
+          },
+        },
+        cta: {
+          title: "AI के साथ अपने खेत को बदलने के लिए तैयार हैं?",
+          button: "मुफ्त मूल्यांकन प्राप्त करें",
+        },
+        footer: {
+          description: "स्मार्ट, टिकाऊ खेती के लिए AI-संचालित कीट प्रबंधन। अत्याधुनिक तकनीक के साथ किसानों को सशक्त बनाना।",
+          quickLinks: "त्वरित लिंक",
+          aboutUs: "हमारे बारे में",
+          services: "सेवाएं",
+          pestDetection: "कीट पहचान",
+          aiChatAssistant: "AI चैट सहायक",
+          weatherAlerts: "मौसम अलर्ट",
+          expertAdvisory: "विशेषज्ञ सलाह",
+          community: "समुदाय",
+          stayUpdated: "अपडेट रहें",
+          newsletterDesc: "कीट प्रबंधन पर नवीनतम अपडेट के लिए हमारे न्यूज़लेटर की सदस्यता लें।",
+          emailPlaceholder: "your@email.com",
+          subscribeNow: "अभी सब्सक्राइब करें",
+          privacyNote: "हम आपकी गोपनीयता का सम्मान करते हैं। कभी भी अनसब्सक्राइब करें।",
+          copyright: "© 2025 कृषिरक्षक। सर्वाधिकार सुरक्षित।",
+          privacyPolicy: "गोपनीयता नीति",
+          termsOfService: "सेवा की शर्तें",
+          cookiePolicy: "कुकी नीति",
+        },
         selectLanguage: "भाषा चुनें",
+      },
+      // Contact Page
+      contact: {
+        nav: {
+          home: "होम",
+          about: "हमारे बारे में",
+          features: "विशेषताएं",
+          howItWorks: "कैसे काम करता है",
+          team: "टीम",
+          contact: "संपर्क",
+          getQuote: "कोटेशन प्राप्त करें",
+        },
+        hero: {
+          label: "संपर्क करें",
+          title: "आइए एक",
+          titleHighlight: "बातचीत शुरू करें",
+          description: "हमारे AI-संचालित कीट प्रबंधन समाधानों के बारे में प्रश्न हैं? हम आपकी फसलों की रक्षा करने और उपज को अधिकतम करने में मदद करने के लिए यहां हैं।",
+          breadcrumbHome: "होम",
+          breadcrumbContact: "संपर्क करें",
+        },
+        info: {
+          callUs: "हमें कॉल करें",
+          emailUs: "हमें ईमेल करें",
+          visitUs: "हमसे मिलें",
+          workingHours: "कार्य समय",
+        },
+        form: {
+          title: "हमें संदेश भेजें",
+          description: "नीचे दिए गए फॉर्म को भरें और हम 24 घंटे के भीतर आपसे संपर्क करेंगे।",
+          yourName: "आपका नाम",
+          namePlaceholder: "जॉन डो",
+          emailAddress: "ईमेल पता",
+          emailPlaceholder: "john@example.com",
+          phoneNumber: "फोन नंबर",
+          phonePlaceholder: "+91 98765 43210",
+          subject: "विषय",
+          selectSubject: "विषय चुनें",
+          generalInquiry: "सामान्य पूछताछ",
+          technicalSupport: "तकनीकी सहायता",
+          partnership: "साझेदारी",
+          requestDemo: "डेमो अनुरोध",
+          yourMessage: "आपका संदेश",
+          messagePlaceholder: "अपनी खेती की जरूरतों के बारे में बताएं...",
+          sendMessage: "संदेश भेजें",
+          successMessage: "आपके संदेश के लिए धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।",
+        },
+        quickHelp: {
+          title: "तुरंत मदद चाहिए?",
+          description: "हमारे कृषि विशेषज्ञ किसी भी कीट आपात स्थिति में आपकी सहायता के लिए 24/7 उपलब्ध हैं।",
+          callNow: "अभी कॉल करें",
+          liveChat: "लाइव चैट",
+          startChat: "चैट शुरू करें",
+        },
+        cta: {
+          title: "अपनी फसलों की रक्षा के लिए तैयार हैं?",
+          description: "हजारों किसान कृषिरक्षक के AI-संचालित कीट प्रबंधन समाधानों पर भरोसा करते हैं।",
+          button: "मुफ्त शुरू करें",
+        },
       },
       // Auth
       auth: {

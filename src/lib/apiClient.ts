@@ -8,6 +8,12 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 // Helper to get auth token from localStorage
 const getAuthToken = (): string | null => {
+    // Try direct token first (set by AuthContext)
+    const directToken = localStorage.getItem('token');
+    if (directToken) {
+        return directToken;
+    }
+    // Fallback to session format
     const session = localStorage.getItem('session');
     if (session) {
         try {

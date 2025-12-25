@@ -316,6 +316,12 @@ const Dashboard = () => {
   }, [user]);
 
   const getAuthToken = () => {
+    // Try direct token first (set by AuthContext)
+    const directToken = localStorage.getItem('token');
+    if (directToken) {
+      return directToken;
+    }
+    // Fallback to session format
     const session = localStorage.getItem('session');
     if (session) {
       try {
@@ -340,29 +346,36 @@ const Dashboard = () => {
 
       // Fetch user's crops
       const token = getAuthToken();
-      const userCropsResponse = await fetch(`${API_URL}/api/user/crops`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      const userCropsData = await userCropsResponse.json();
-
-      if (userCropsData && cropsData) {
-        const enrichedUserCrops = userCropsData.map((uc: any) => {
-          let cropData;
-          if (typeof uc.crop_id === 'object' && uc.crop_id) {
-            cropData = uc.crop_id;
-          } else {
-            cropData = cropsData.find((c: Crop) => c.id === uc.crop_id);
+      if (token) {
+        const userCropsResponse = await fetch(`${API_URL}/api/user/crops`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
           }
-
-          return {
-            ...uc,
-            crop: cropData,
-            crop_id: typeof uc.crop_id === 'object' ? uc.crop_id.id : uc.crop_id
-          };
         });
-        setUserCrops(enrichedUserCrops);
+
+        if (userCropsResponse.ok) {
+          const userCropsData = await userCropsResponse.json();
+
+          if (Array.isArray(userCropsData) && cropsData) {
+            const enrichedUserCrops = userCropsData.map((uc: any) => {
+              let cropData;
+              if (typeof uc.crop_id === 'object' && uc.crop_id) {
+                cropData = uc.crop_id;
+              } else {
+                cropData = cropsData.find((c: Crop) => c.id === uc.crop_id);
+              }
+
+              return {
+                ...uc,
+                crop: cropData,
+                crop_id: typeof uc.crop_id === 'object' ? uc.crop_id.id : uc.crop_id
+              };
+            });
+            setUserCrops(enrichedUserCrops);
+          }
+        } else {
+          console.warn('Failed to fetch user crops - user may not be authenticated');
+        }
       }
 
       // Fetch weather and AI alerts

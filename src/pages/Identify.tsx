@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -55,46 +55,23 @@ const scaleIn = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } }
 };
 
-// Mock pest data
-const mockPests = [
-  {
-    id: 1,
-    name: "Aphids",
-    crop: "Wheat",
-    symptoms: ["Yellowing leaves", "Curled leaves", "Sticky residue"],
-    severity: "Medium",
-  },
-  {
-    id: 2,
-    name: "Whitefly",
-    crop: "Cotton",
-    symptoms: ["White insects on leaves", "Yellowing", "Honeydew"],
-    severity: "High",
-  },
-  {
-    id: 3,
-    name: "Stem Borer",
-    crop: "Rice",
-    symptoms: ["Dead heart", "White head", "Holes in stem"],
-    severity: "High",
-  },
-  {
-    id: 4,
-    name: "Thrips",
-    crop: "Cotton",
-    symptoms: ["Silvery patches", "Leaf curling", "Stunted growth"],
-    severity: "Medium",
-  },
-  {
-    id: 5,
-    name: "Brown Plant Hopper",
-    crop: "Rice",
-    symptoms: ["Hopperburn", "Yellowing", "Wilting"],
-    severity: "High",
-  },
-];
+// Pest type for TypeScript
+interface Pest {
+  id: string;
+  _id?: string;
+  name: string;
+  name_hi?: string;
+  crop: string;
+  crop_id?: { name: string; name_hi?: string };
+  symptoms: string[];
+  symptoms_hi?: string[];
+  severity: string;
+  scientific_name?: string;
+  tags?: string[];
+}
 
-const crops = ["Wheat", "Rice", "Cotton", "Tomato", "Maize", "Sugarcane"];
+// All crops including new ones
+const crops = ["Wheat", "Rice", "Cotton", "Tomato", "Maize", "Sugarcane", "Potato", "Chickpea", "Mustard", "Groundnut"];
 
 const cropColors: { [key: string]: string } = {
   "Wheat": "from-amber-400 to-orange-500",
@@ -103,6 +80,10 @@ const cropColors: { [key: string]: string } = {
   "Tomato": "from-red-400 to-rose-500",
   "Maize": "from-yellow-400 to-amber-500",
   "Sugarcane": "from-lime-400 to-green-500",
+  "Potato": "from-orange-400 to-amber-600",
+  "Chickpea": "from-yellow-500 to-orange-400",
+  "Mustard": "from-yellow-300 to-amber-400",
+  "Groundnut": "from-amber-500 to-brown-500",
 };
 
 const symptomOptions = [
@@ -135,8 +116,45 @@ const Identify = () => {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [aiResults, setAiResults] = useState<any>(null);
   const [aiCrop, setAiCrop] = useState("");
+  const [pests, setPests] = useState<Pest[]>([]);
+  const [isLoadingPests, setIsLoadingPests] = useState(true);
   const { toast } = useToast();
   const { t, i18n } = useTranslation();
+
+  // Fetch pests from database API
+  useEffect(() => {
+    const fetchPests = async () => {
+      try {
+        setIsLoadingPests(true);
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL || "http://localhost:5000"}/api/pests`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          // Transform API data to match component expectations
+          const transformedPests = data.map((pest: any) => ({
+            id: pest._id,
+            name: i18n.language === 'hi' && pest.name_hi ? pest.name_hi : pest.name,
+            crop: pest.crop_id?.name || pest.crop || 'Unknown',
+            symptoms: i18n.language === 'hi' && pest.symptoms_hi?.length
+              ? pest.symptoms_hi.slice(0, 3)
+              : (pest.symptoms?.slice(0, 3) || []),
+            severity: pest.tags?.includes('high-severity') ? 'High' :
+              pest.tags?.includes('medium-severity') ? 'Medium' : 'Low',
+            scientific_name: pest.scientific_name,
+          }));
+          setPests(transformedPests);
+        } else {
+          console.error("Failed to fetch pests");
+        }
+      } catch (error) {
+        console.error("Error fetching pests:", error);
+      } finally {
+        setIsLoadingPests(false);
+      }
+    };
+    fetchPests();
+  }, [i18n.language]);
 
   const setTab = (tab: string) => {
     setSearchParams({ tab });
@@ -250,7 +268,7 @@ const Identify = () => {
     }
   };
 
-  const filteredPests = mockPests.filter((pest) => {
+  const filteredPests = pests.filter((pest) => {
     const matchesSearch =
       pest.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       pest.crop.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -260,7 +278,7 @@ const Identify = () => {
   });
 
   const getWizardResults = () => {
-    return mockPests.filter(
+    return pests.filter(
       (pest) =>
         (!selectedCrop || pest.crop === selectedCrop) &&
         selectedSymptoms.some((s) =>
@@ -316,8 +334,8 @@ const Identify = () => {
             whileTap={{ scale: 0.98 }}
             onClick={() => setTab("wizard")}
             className={`flex items-center gap-2 px-5 py-3 rounded-full font-semibold transition-all ${activeTab === "wizard"
-                ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
-                : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
+              ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
+              : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
               }`}
           >
             <FileQuestion className="w-5 h-5" />
@@ -328,8 +346,8 @@ const Identify = () => {
             whileTap={{ scale: 0.98 }}
             onClick={() => setTab("search")}
             className={`flex items-center gap-2 px-5 py-3 rounded-full font-semibold transition-all ${activeTab === "search"
-                ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
-                : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
+              ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
+              : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
               }`}
           >
             <Search className="w-5 h-5" />
@@ -340,8 +358,8 @@ const Identify = () => {
             whileTap={{ scale: 0.98 }}
             onClick={() => setTab("ai")}
             className={`flex items-center gap-2 px-5 py-3 rounded-full font-semibold transition-all ${activeTab === "ai"
-                ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
-                : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
+              ? "bg-[#B9F261] text-[#0B0B0B] shadow-lg"
+              : "bg-white border border-gray-200 text-gray-600 hover:border-[#B9F261]"
               }`}
           >
             <Camera className="w-5 h-5" />
@@ -369,8 +387,8 @@ const Identify = () => {
                     animate={{ scale: 1 }}
                     transition={{ delay: step * 0.1 }}
                     className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg transition-all ${wizardStep >= step
-                        ? "bg-gradient-to-br from-[#B9F261] to-[#FFD24A] text-[#0B0B0B] shadow-lg"
-                        : "bg-white border-2 border-gray-200 text-gray-400"
+                      ? "bg-gradient-to-br from-[#B9F261] to-[#FFD24A] text-[#0B0B0B] shadow-lg"
+                      : "bg-white border-2 border-gray-200 text-gray-400"
                       }`}
                   >
                     {wizardStep > step ? <Check className="w-6 h-6" /> : step}
@@ -408,8 +426,8 @@ const Identify = () => {
                           whileTap={{ scale: 0.95 }}
                           onClick={() => setSelectedCrop(crop)}
                           className={`p-5 rounded-2xl border-2 transition-all ${selectedCrop === crop
-                              ? "border-[#B9F261] bg-[#B9F261]/10 shadow-lg"
-                              : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
+                            ? "border-[#B9F261] bg-[#B9F261]/10 shadow-lg"
+                            : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
                             }`}
                         >
                           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${cropColors[crop]} flex items-center justify-center mx-auto mb-3 shadow-md`}>
@@ -462,15 +480,15 @@ const Identify = () => {
                           whileTap={{ scale: 0.98 }}
                           onClick={() => handleSymptomToggle(symptom.id)}
                           className={`p-4 rounded-xl border-2 text-left transition-all ${selectedSymptoms.includes(symptom.id)
-                              ? "border-[#B9F261] bg-[#B9F261]/10"
-                              : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
+                            ? "border-[#B9F261] bg-[#B9F261]/10"
+                            : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
                             }`}
                         >
                           <div className="flex items-center gap-3">
                             <span className="text-2xl">{symptom.icon}</span>
                             <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center ${selectedSymptoms.includes(symptom.id)
-                                ? "border-[#B9F261] bg-[#B9F261]"
-                                : "border-gray-300"
+                              ? "border-[#B9F261] bg-[#B9F261]"
+                              : "border-gray-300"
                               }`}>
                               {selectedSymptoms.includes(symptom.id) && (
                                 <Check className="w-3 h-3 text-[#0B0B0B]" />
@@ -535,8 +553,8 @@ const Identify = () => {
                           whileTap={{ scale: 0.95 }}
                           onClick={() => setSeverity(sev.level)}
                           className={`p-6 rounded-2xl border-2 transition-all ${severity === sev.level
-                              ? "border-[#B9F261] bg-[#B9F261]/10 shadow-lg"
-                              : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
+                            ? "border-[#B9F261] bg-[#B9F261]/10 shadow-lg"
+                            : "border-gray-200 hover:border-[#B9F261]/50 bg-white"
                             }`}
                         >
                           <div className={`w-8 h-8 rounded-full mx-auto mb-3 bg-gradient-to-br ${sev.color}`} />
@@ -780,8 +798,8 @@ const Identify = () => {
                     <motion.label
                       whileHover={{ scale: 1.01 }}
                       className={`block border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all ${uploadedImage
-                          ? "border-[#B9F261] bg-[#B9F261]/5"
-                          : "border-gray-300 hover:border-[#B9F261]/50"
+                        ? "border-[#B9F261] bg-[#B9F261]/5"
+                        : "border-gray-300 hover:border-[#B9F261]/50"
                         }`}
                     >
                       <input
@@ -893,15 +911,15 @@ const Identify = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
                           className={`p-4 rounded-xl border-2 ${index === 0
-                              ? "border-[#B9F261] bg-[#B9F261]/5"
-                              : "border-gray-200 bg-white"
+                            ? "border-[#B9F261] bg-[#B9F261]/5"
+                            : "border-gray-200 bg-white"
                             }`}
                         >
                           <div className="flex items-center justify-between mb-2">
                             <div className="flex items-center gap-3">
                               <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${index === 0
-                                  ? "bg-[#B9F261] text-[#0B0B0B]"
-                                  : "bg-gray-100 text-gray-500"
+                                ? "bg-[#B9F261] text-[#0B0B0B]"
+                                : "bg-gray-100 text-gray-500"
                                 }`}>
                                 <Bug className="w-5 h-5" />
                               </div>

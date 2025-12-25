@@ -659,6 +659,644 @@ const pestsData = [
         damage_hi: 'वायरस फैलाते हैं',
         season: 'Vegetative stage',
         tags: ['sucking-pest', 'vector', 'high-severity']
+    },
+    {
+        crop: 'Potato',
+        name: 'Cutworm',
+        name_hi: 'कटवर्म',
+        scientific_name: 'Agrotis ipsilon',
+        symptoms: [
+            'Cut seedlings at ground level',
+            'Wilted plants',
+            'Missing plants',
+            'Larvae in soil',
+            'Night feeding damage'
+        ],
+        symptoms_hi: [
+            'जमीन पर पौधे कटे हुए',
+            'मुरझाए पौधे',
+            'गायब पौधे',
+            'मिट्टी में लार्वा',
+            'रात में क्षति'
+        ],
+        lifecycle: '35-45 days',
+        lifecycle_hi: '35-45 दिन',
+        damage: 'Cut young plants at base causing stand loss',
+        damage_hi: 'युवा पौधों को काटते हैं',
+        season: 'Early vegetative stage',
+        tags: ['chewing-pest', 'larvae', 'medium-severity']
+    },
+    {
+        crop: 'Potato',
+        name: 'Colorado Potato Beetle',
+        name_hi: 'कोलोराडो आलू भृंग',
+        scientific_name: 'Leptinotarsa decemlineata',
+        symptoms: [
+            'Defoliation',
+            'Skeletonized leaves',
+            'Larvae and adults visible',
+            'Yellow-orange eggs',
+            'Reduced tuber size'
+        ],
+        symptoms_hi: [
+            'पत्तियों का नाश',
+            'पत्तियों का कंकाल',
+            'लार्वा और वयस्क दिखाई देना',
+            'पीले-नारंगी अंडे',
+            'कंद का आकार कम'
+        ],
+        lifecycle: '30-35 days',
+        lifecycle_hi: '30-35 दिन',
+        damage: 'Severe defoliation reducing tuber yield',
+        damage_hi: 'गंभीर पत्ती हानि',
+        season: 'Throughout growing season',
+        tags: ['chewing-pest', 'beetle', 'high-severity']
+    },
+
+    // CHICKPEA PESTS (8)
+    {
+        crop: 'Chickpea',
+        name: 'Pod Borer',
+        name_hi: 'फली छेदक',
+        scientific_name: 'Helicoverpa armigera',
+        symptoms: [
+            'Bore holes in pods',
+            'Damaged seeds',
+            'Larvae in pods',
+            'Frass on pods',
+            'Yield loss'
+        ],
+        symptoms_hi: [
+            'फलियों में छेद',
+            'बीज क्षतिग्रस्त',
+            'फलियों में लार्वा',
+            'फलियों पर मल',
+            'उपज हानि'
+        ],
+        lifecycle: '30-35 days',
+        lifecycle_hi: '30-35 दिन',
+        damage: 'Major pest causing 50-90% yield loss in severe cases',
+        damage_hi: 'गंभीर मामलों में 50-90% उपज हानि',
+        season: 'Flowering to pod formation',
+        tags: ['boring-pest', 'larvae', 'high-severity']
+    },
+    {
+        crop: 'Chickpea',
+        name: 'Cutworm',
+        name_hi: 'कटवर्म',
+        scientific_name: 'Agrotis ipsilon',
+        symptoms: [
+            'Cut seedlings',
+            'Wilting',
+            'Plant death',
+            'Soil dwelling larvae',
+            'Night damage'
+        ],
+        symptoms_hi: [
+            'कटे पौधे',
+            'मुरझाना',
+            'पौधे की मृत्यु',
+            'मिट्टी में लार्वा',
+            'रात में क्षति'
+        ],
+        lifecycle: '35-40 days',
+        lifecycle_hi: '35-40 दिन',
+        damage: 'Cut young plants at base',
+        damage_hi: 'युवा पौधों को काटते हैं',
+        season: 'Seedling stage',
+        tags: ['chewing-pest', 'larvae', 'medium-severity']
+    },
+    {
+        crop: 'Chickpea',
+        name: 'Aphids',
+        name_hi: 'माहू',
+        scientific_name: 'Aphis craccivora',
+        symptoms: [
+            'Curling of leaves',
+            'Yellowing',
+            'Stunted growth',
+            'Honeydew secretion',
+            'Virus transmission'
+        ],
+        symptoms_hi: [
+            'पत्तियों का मुड़ना',
+            'पीलापन',
+            'वृद्धि रुकना',
+            'मधुरस स्राव',
+            'वायरस फैलाना'
+        ],
+        lifecycle: '7-10 days',
+        lifecycle_hi: '7-10 दिन',
+        damage: 'Suck sap and transmit viruses',
+        damage_hi: 'रस चूसते हैं और वायरस फैलाते हैं',
+        season: 'Vegetative to flowering',
+        tags: ['sucking-pest', 'vector', 'medium-severity']
+    },
+    {
+        crop: 'Chickpea',
+        name: 'Leaf Miner',
+        name_hi: 'पत्ती सुरंगक',
+        scientific_name: 'Liriomyza cicerina',
+        symptoms: [
+            'Serpentine mines in leaves',
+            'White trails',
+            'Leaf drying',
+            'Reduced photosynthesis',
+            'Premature defoliation'
+        ],
+        symptoms_hi: [
+            'पत्तियों में सुरंगें',
+            'सफेद निशान',
+            'पत्ती सूखना',
+            'प्रकाश संश्लेषण कम',
+            'समय से पहले पत्ती झड़ना'
+        ],
+        lifecycle: '18-21 days',
+        lifecycle_hi: '18-21 दिन',
+        damage: 'Mine leaves reducing photosynthetic area',
+        damage_hi: 'पत्तियों में सुरंग बनाते हैं',
+        season: 'Vegetative stage',
+        tags: ['mining-pest', 'larvae', 'medium-severity']
+    },
+    {
+        crop: 'Chickpea',
+        name: 'Termites',
+        name_hi: 'दीमक',
+        scientific_name: 'Odontotermes obesus',
+        symptoms: [
+            'Wilting plants',
+            'Hollowed roots',
+            'Dead plants in patches',
+            'Mud tubes',
+            'Root damage'
+        ],
+        symptoms_hi: [
+            'मुरझाते पौधे',
+            'खोखली जड़ें',
+            'धब्बों में मरे पौधे',
+            'मिट्टी की नलियां',
+            'जड़ क्षति'
+        ],
+        lifecycle: 'Perennial colony',
+        lifecycle_hi: 'बारहमासी कॉलोनी',
+        damage: 'Attack roots causing plant death',
+        damage_hi: 'जड़ों पर हमला करते हैं',
+        season: 'Dry conditions',
+        tags: ['soil-pest', 'high-severity', 'root-damage']
+    },
+
+    // MUSTARD PESTS (8)
+    {
+        crop: 'Mustard',
+        name: 'Mustard Aphid',
+        name_hi: 'सरसों का माहू',
+        scientific_name: 'Lipaphis erysimi',
+        symptoms: [
+            'Curling and yellowing of leaves',
+            'Stunted inflorescence',
+            'Pod shriveling',
+            'Honeydew secretion',
+            'Sooty mold'
+        ],
+        symptoms_hi: [
+            'पत्तियों का मुड़ना और पीला होना',
+            'पुष्पक्रम का अविकसित होना',
+            'फलियों का सिकुड़ना',
+            'मधुरस स्राव',
+            'काली फफूंद'
+        ],
+        lifecycle: '8-10 days',
+        lifecycle_hi: '8-10 दिन',
+        damage: 'Major pest causing 35-96% yield loss',
+        damage_hi: '35-96% उपज हानि',
+        season: 'January to March',
+        tags: ['sucking-pest', 'high-severity']
+    },
+    {
+        crop: 'Mustard',
+        name: 'Painted Bug',
+        name_hi: 'पेंटेड बग',
+        scientific_name: 'Bagrada cruciferarum',
+        symptoms: [
+            'White patches on leaves',
+            'Wilting',
+            'Drying of plants',
+            'Both nymphs and adults feeding',
+            'Plant death'
+        ],
+        symptoms_hi: [
+            'पत्तियों पर सफेद धब्बे',
+            'मुरझाना',
+            'पौधों का सूखना',
+            'शिशु और वयस्क दोनों खाते हैं',
+            'पौधे की मृत्यु'
+        ],
+        lifecycle: '25-30 days',
+        lifecycle_hi: '25-30 दिन',
+        damage: 'Suck sap causing wilting and death',
+        damage_hi: 'रस चूसकर मुरझाना और मृत्यु',
+        season: 'Seedling and maturity stage',
+        tags: ['sucking-pest', 'high-severity']
+    },
+    {
+        crop: 'Mustard',
+        name: 'Mustard Sawfly',
+        name_hi: 'सरसों की आरा मक्खी',
+        scientific_name: 'Athalia lugens proxima',
+        symptoms: [
+            'Defoliation',
+            'Holes in leaves',
+            'Larvae visible',
+            'Skeletonized leaves',
+            'Stunted growth'
+        ],
+        symptoms_hi: [
+            'पत्ती हानि',
+            'पत्तियों में छेद',
+            'लार्वा दिखाई देना',
+            'पत्तियों का कंकाल',
+            'वृद्धि रुकना'
+        ],
+        lifecycle: '30-35 days',
+        lifecycle_hi: '30-35 दिन',
+        damage: 'Larvae feed on leaves causing defoliation',
+        damage_hi: 'लार्वा पत्तियों को खाते हैं',
+        season: 'October to November',
+        tags: ['chewing-pest', 'larvae', 'medium-severity']
+    },
+    {
+        crop: 'Mustard',
+        name: 'Diamondback Moth',
+        name_hi: 'डायमंडबैक मोथ',
+        scientific_name: 'Plutella xylostella',
+        symptoms: [
+            'Small holes in leaves',
+            'Window pane damage',
+            'Larvae on underside',
+            'Reduced vigor',
+            'Pod damage'
+        ],
+        symptoms_hi: [
+            'पत्तियों में छोटे छेद',
+            'खिड़की जैसी क्षति',
+            'नीचे की ओर लार्वा',
+            'कमजोरी',
+            'फली क्षति'
+        ],
+        lifecycle: '21-28 days',
+        lifecycle_hi: '21-28 दिन',
+        damage: 'Feed on leaves and pods',
+        damage_hi: 'पत्तियों और फलियों को खाते हैं',
+        season: 'Throughout crop season',
+        tags: ['chewing-pest', 'larvae', 'medium-severity']
+    },
+
+    // GROUNDNUT PESTS (8)
+    {
+        crop: 'Groundnut',
+        name: 'Leaf Miner',
+        name_hi: 'पत्ती सुरंगक',
+        scientific_name: 'Aproaerema modicella',
+        symptoms: [
+            'Blotch mines in leaflets',
+            'Webbed leaflets',
+            'Larva inside mines',
+            'Leaf drying',
+            'Defoliation'
+        ],
+        symptoms_hi: [
+            'पत्रकों में धब्बेदार सुरंग',
+            'जाले से बंधे पत्रक',
+            'सुरंगों में लार्वा',
+            'पत्ती सूखना',
+            'पत्ती झड़ना'
+        ],
+        lifecycle: '20-25 days',
+        lifecycle_hi: '20-25 दिन',
+        damage: 'Major pest causing 20-50% yield loss',
+        damage_hi: '20-50% उपज हानि',
+        season: 'Vegetative to pod formation',
+        tags: ['mining-pest', 'larvae', 'high-severity']
+    },
+    {
+        crop: 'Groundnut',
+        name: 'Red Hairy Caterpillar',
+        name_hi: 'लाल बालदार कैटरपिलर',
+        scientific_name: 'Amsacta albistriga',
+        symptoms: [
+            'Severe defoliation',
+            'Gregarious larvae',
+            'Plant death',
+            'Damage in patches',
+            'Hairy caterpillars visible'
+        ],
+        symptoms_hi: [
+            'गंभीर पत्ती हानि',
+            'झुंड में लार्वा',
+            'पौधे की मृत्यु',
+            'धब्बों में क्षति',
+            'बालदार कैटरपिलर दिखाई देना'
+        ],
+        lifecycle: '35-40 days',
+        lifecycle_hi: '35-40 दिन',
+        damage: 'Voracious feeders causing complete defoliation',
+        damage_hi: 'पूर्ण पत्ती हानि',
+        season: 'July to August',
+        tags: ['chewing-pest', 'larvae', 'high-severity']
+    },
+    {
+        crop: 'Groundnut',
+        name: 'Thrips',
+        name_hi: 'थ्रिप्स',
+        scientific_name: 'Scirtothrips dorsalis',
+        symptoms: [
+            'Silvery patches on leaves',
+            'Leaf curling',
+            'Bud necrosis',
+            'Stunted growth',
+            'Virus transmission'
+        ],
+        symptoms_hi: [
+            'पत्तियों पर चांदी के धब्बे',
+            'पत्ती मुड़ना',
+            'कली का परिगलन',
+            'वृद्धि रुकना',
+            'वायरस फैलाना'
+        ],
+        lifecycle: '15-20 days',
+        lifecycle_hi: '15-20 दिन',
+        damage: 'Vector for bud necrosis virus',
+        damage_hi: 'बड नेक्रोसिस वायरस का वाहक',
+        season: 'Throughout crop season',
+        tags: ['sucking-pest', 'vector', 'high-severity']
+    },
+    {
+        crop: 'Groundnut',
+        name: 'White Grub',
+        name_hi: 'सफेद सुंडी',
+        scientific_name: 'Holotrichia consanguinea',
+        symptoms: [
+            'Wilting plants',
+            'Yellowing',
+            'Root damage',
+            'Grubs in soil',
+            'Plant death in patches'
+        ],
+        symptoms_hi: [
+            'मुरझाते पौधे',
+            'पीलापन',
+            'जड़ क्षति',
+            'मिट्टी में सुंडी',
+            'धब्बों में पौधे मरना'
+        ],
+        lifecycle: 'Annual, grubs feed for 4-6 months',
+        lifecycle_hi: 'वार्षिक, 4-6 महीने खाते हैं',
+        damage: 'Severe root damage causing plant death',
+        damage_hi: 'गंभीर जड़ क्षति',
+        season: 'June to September',
+        tags: ['soil-pest', 'grub', 'high-severity', 'root-damage']
+    },
+    {
+        crop: 'Groundnut',
+        name: 'Jassids',
+        name_hi: 'जैसिड',
+        scientific_name: 'Empoasca kerri',
+        symptoms: [
+            'Yellowing leaf margins',
+            'V-shaped yellowing',
+            'Hopper burn',
+            'Stunted growth',
+            'Reduced yield'
+        ],
+        symptoms_hi: [
+            'पत्ती किनारों का पीलापन',
+            'V-आकार पीलापन',
+            'होपर बर्न',
+            'वृद्धि रुकना',
+            'उपज कम'
+        ],
+        lifecycle: '14-20 days',
+        lifecycle_hi: '14-20 दिन',
+        damage: 'Suck sap causing hopper burn',
+        damage_hi: 'रस चूसकर होपर बर्न',
+        season: 'Vegetative stage',
+        tags: ['sucking-pest', 'medium-severity']
+    },
+
+    // ADDITIONAL RICE PESTS
+    {
+        crop: 'Rice',
+        name: 'Rice Hispa',
+        name_hi: 'धान का हिस्पा',
+        scientific_name: 'Dicladispa armigera',
+        symptoms: [
+            'White parallel streaks on leaves',
+            'Scraping damage',
+            'Tunneling by larvae',
+            'Leaf tips drying',
+            'Reduced vigor'
+        ],
+        symptoms_hi: [
+            'पत्तियों पर सफेद समानांतर धारियां',
+            'खुरचने की क्षति',
+            'लार्वा द्वारा सुरंग',
+            'पत्ती के सिरे सूखना',
+            'कमजोरी'
+        ],
+        lifecycle: '28-35 days',
+        lifecycle_hi: '28-35 दिन',
+        damage: 'Adults scrape and larvae mine leaves',
+        damage_hi: 'वयस्क खुरचते हैं और लार्वा सुरंग बनाते हैं',
+        season: 'Tillering to heading',
+        tags: ['chewing-pest', 'beetle', 'medium-severity']
+    },
+    {
+        crop: 'Rice',
+        name: 'Case Worm',
+        name_hi: 'केस वर्म',
+        scientific_name: 'Nymphula depunctalis',
+        symptoms: [
+            'Tubular leaf cases',
+            'Cut leaf tips',
+            'Larvae in water',
+            'Defoliation',
+            'White streaks'
+        ],
+        symptoms_hi: [
+            'ट्यूबलर पत्ती के केस',
+            'पत्ती के सिरे कटे',
+            'पानी में लार्वा',
+            'पत्ती हानि',
+            'सफेद धारियां'
+        ],
+        lifecycle: '25-30 days',
+        lifecycle_hi: '25-30 दिन',
+        damage: 'Larvae cut leaves and make cases for protection',
+        damage_hi: 'लार्वा पत्तियां काटते हैं',
+        season: 'Vegetative stage in flooded fields',
+        tags: ['chewing-pest', 'larvae', 'medium-severity']
+    },
+
+    // ADDITIONAL TOMATO PESTS
+    {
+        crop: 'Tomato',
+        name: 'Spider Mites',
+        name_hi: 'मकड़ी माइट',
+        scientific_name: 'Tetranychus urticae',
+        symptoms: [
+            'Yellow stippling on leaves',
+            'Webbing on underside',
+            'Bronze discoloration',
+            'Leaf drop',
+            'Reduced fruit size'
+        ],
+        symptoms_hi: [
+            'पत्तियों पर पीले धब्बे',
+            'नीचे जाले',
+            'कांस्य रंग',
+            'पत्ती गिरना',
+            'फल का आकार कम'
+        ],
+        lifecycle: '10-14 days',
+        lifecycle_hi: '10-14 दिन',
+        damage: 'Suck cell contents causing stippling and bronzing',
+        damage_hi: 'कोशिका सामग्री चूसते हैं',
+        season: 'Hot dry weather',
+        tags: ['sucking-pest', 'mite', 'high-severity']
+    },
+    {
+        crop: 'Tomato',
+        name: 'Tobacco Caterpillar',
+        name_hi: 'तंबाकू सुंडी',
+        scientific_name: 'Spodoptera litura',
+        symptoms: [
+            'Irregular holes in leaves',
+            'Skeletonized leaves',
+            'Fruit damage',
+            'Gregarious larvae',
+            'Severe defoliation'
+        ],
+        symptoms_hi: [
+            'पत्तियों में अनियमित छेद',
+            'पत्तियों का कंकाल',
+            'फल क्षति',
+            'झुंड में लार्वा',
+            'गंभीर पत्ती हानि'
+        ],
+        lifecycle: '30-35 days',
+        lifecycle_hi: '30-35 दिन',
+        damage: 'Feed on leaves and fruits',
+        damage_hi: 'पत्तियों और फलों को खाते हैं',
+        season: 'Throughout crop season',
+        tags: ['chewing-pest', 'larvae', 'high-severity']
+    },
+
+    // ADDITIONAL SUGARCANE PESTS
+    {
+        crop: 'Sugarcane',
+        name: 'Top Borer',
+        name_hi: 'शीर्ष छेदक',
+        scientific_name: 'Scirpophaga excerptalis',
+        symptoms: [
+            'Dead heart formation',
+            'Bunchy top',
+            'Side shoots',
+            'Reduced cane weight',
+            'Bore holes at top'
+        ],
+        symptoms_hi: [
+            'मृत केंद्र बनना',
+            'गुच्छेदार शीर्ष',
+            'पार्श्व शाखाएं',
+            'गन्ने का वजन कम',
+            'शीर्ष पर छेद'
+        ],
+        lifecycle: '45-60 days',
+        lifecycle_hi: '45-60 दिन',
+        damage: 'Bore into growing point causing dead heart',
+        damage_hi: 'बढ़ते बिंदु में छेद करते हैं',
+        season: 'February to May',
+        tags: ['boring-pest', 'larvae', 'high-severity']
+    },
+    {
+        crop: 'Sugarcane',
+        name: 'Woolly Aphid',
+        name_hi: 'ऊनी माहू',
+        scientific_name: 'Ceratovacuna lanigera',
+        symptoms: [
+            'White woolly coating on leaves',
+            'Honeydew secretion',
+            'Sooty mold',
+            'Yellowing',
+            'Reduced photosynthesis'
+        ],
+        symptoms_hi: [
+            'पत्तियों पर सफेद ऊनी परत',
+            'मधुरस स्राव',
+            'काली फफूंद',
+            'पीलापन',
+            'प्रकाश संश्लेषण कम'
+        ],
+        lifecycle: '14-21 days',
+        lifecycle_hi: '14-21 दिन',
+        damage: 'Suck sap causing reduced cane quality',
+        damage_hi: 'रस चूसते हैं',
+        season: 'October to December',
+        tags: ['sucking-pest', 'medium-severity']
+    },
+
+    // ADDITIONAL MAIZE PESTS
+    {
+        crop: 'Maize',
+        name: 'Pink Stem Borer',
+        name_hi: 'गुलाबी तना छेदक',
+        scientific_name: 'Sesamia inferens',
+        symptoms: [
+            'Dead heart',
+            'Bore holes with frass',
+            'Lodging',
+            'Tunneled stems',
+            'Pink larvae inside'
+        ],
+        symptoms_hi: [
+            'मृत केंद्र',
+            'मल के साथ छेद',
+            'गिरना',
+            'सुरंग वाले तने',
+            'अंदर गुलाबी लार्वा'
+        ],
+        lifecycle: '35-50 days',
+        lifecycle_hi: '35-50 दिन',
+        damage: 'Bore into stems causing structural weakness',
+        damage_hi: 'तनों में छेद करते हैं',
+        season: 'Kharif and Rabi',
+        tags: ['boring-pest', 'larvae', 'high-severity']
+    },
+    {
+        crop: 'Maize',
+        name: 'Shoot Fly',
+        name_hi: 'तना मक्खी',
+        scientific_name: 'Atherigona soccata',
+        symptoms: [
+            'Dead heart in seedlings',
+            'Central shoot withered',
+            'Egg on leaves',
+            'Maggot in stem',
+            'Reduced plant stand'
+        ],
+        symptoms_hi: [
+            'पौध में मृत केंद्र',
+            'केंद्रीय शूट मुरझाना',
+            'पत्तियों पर अंडे',
+            'तने में मैगट',
+            'पौधों की संख्या कम'
+        ],
+        lifecycle: '18-25 days',
+        lifecycle_hi: '18-25 दिन',
+        damage: 'Maggot bores into central shoot',
+        damage_hi: 'मैगट केंद्रीय शूट में छेद करता है',
+        season: 'Seedling stage',
+        tags: ['boring-pest', 'larvae', 'high-severity']
     }
 ];
 

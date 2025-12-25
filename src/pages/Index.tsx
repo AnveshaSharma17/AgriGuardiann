@@ -95,20 +95,20 @@ const Index = () => {
   const features = [
     {
       icon: Camera,
-      title: "AI Pest Detection",
-      description: "Upload crop images and get instant AI-powered pest identification with 90%+ accuracy.",
+      title: t('landing.features.aiDetection.title'),
+      description: t('landing.features.aiDetection.description'),
       highlighted: false,
     },
     {
       icon: Shield,
-      title: "Smart Advisories",
-      description: "Receive personalized treatment plans following IPM principles for sustainable farming.",
+      title: t('landing.features.smartAdvisories.title'),
+      description: t('landing.features.smartAdvisories.description'),
       highlighted: true,
     },
     {
       icon: Zap,
-      title: "Real-time Alerts",
-      description: "Weather-based pest risk alerts help you take preventive action before damage occurs.",
+      title: t('landing.features.realTimeAlerts.title'),
+      description: t('landing.features.realTimeAlerts.description'),
       highlighted: false,
     },
   ];
@@ -116,33 +116,33 @@ const Index = () => {
   const moreFeatures = [
     {
       icon: Bug,
-      title: "Pest Library",
-      description: "Access comprehensive database of 500+ pests with detailed identification guides.",
+      title: t('landing.moreFeatures.pestLibrary.title'),
+      description: t('landing.moreFeatures.pestLibrary.description'),
     },
     {
       icon: Globe,
-      title: "Multi-language Support",
-      description: "Available in Hindi, English, and regional languages for all Indian farmers.",
+      title: t('landing.moreFeatures.multiLanguage.title'),
+      description: t('landing.moreFeatures.multiLanguage.description'),
     },
     {
       icon: TrendingUp,
-      title: "Yield Analytics",
-      description: "Track your crop health and predict yield improvements with AI insights.",
+      title: t('landing.moreFeatures.yieldAnalytics.title'),
+      description: t('landing.moreFeatures.yieldAnalytics.description'),
     },
     {
       icon: Users,
-      title: "Expert Community",
-      description: "Connect with agricultural experts and fellow farmers for peer support.",
+      title: t('landing.moreFeatures.expertCommunity.title'),
+      description: t('landing.moreFeatures.expertCommunity.description'),
     },
     {
       icon: Award,
-      title: "Certified Solutions",
-      description: "All recommendations follow government-approved IPM guidelines.",
+      title: t('landing.moreFeatures.certifiedSolutions.title'),
+      description: t('landing.moreFeatures.certifiedSolutions.description'),
     },
     {
       icon: MessageCircle,
-      title: "24/7 AI Chat",
-      description: "Get instant answers to your farming queries anytime, anywhere.",
+      title: t('landing.moreFeatures.aiChat.title'),
+      description: t('landing.moreFeatures.aiChat.description'),
     },
   ];
 
@@ -150,28 +150,28 @@ const Index = () => {
     {
       step: 1,
       icon: Camera,
-      title: "Upload Image",
-      description: "Take a photo of affected crops or describe symptoms using our guided wizard.",
+      title: t('landing.howItWorks.step1.title'),
+      description: t('landing.howItWorks.step1.description'),
     },
     {
       step: 2,
       icon: Bug,
-      title: "AI Analysis",
-      description: "Our AI analyzes the image to identify pests with confidence scores and symptoms.",
+      title: t('landing.howItWorks.step2.title'),
+      description: t('landing.howItWorks.step2.description'),
     },
     {
       step: 3,
       icon: Shield,
-      title: "Get Advisory",
-      description: "Receive detailed IPM-based treatment recommendations tailored to your crop.",
+      title: t('landing.howItWorks.step3.title'),
+      description: t('landing.howItWorks.step3.description'),
     },
   ];
 
   const stats = [
-    { value: "10,000+", label: "Farmers Helped" },
-    { value: "50,000+", label: "Pests Identified" },
-    { value: "95%", label: "Accuracy Rate" },
-    { value: "24/7", label: "AI Support" },
+    { value: "10,000+", label: t('landing.stats.farmersHelped') },
+    { value: "50,000+", label: t('landing.stats.pestsIdentified') },
+    { value: "95%", label: t('landing.stats.accuracyRate') },
+    { value: "24/7", label: t('landing.stats.aiSupport') },
   ];
 
   const trustedLogos = [
@@ -186,58 +186,58 @@ const Index = () => {
   ];
 
   const benefits = [
-    "From consultation to installation, we're connected throughout the process.",
-    "Over a decade of agricultural AI expertise applied to every project.",
-    "We work with reliable technology and sustainable farming practices.",
-    "Our team follows strict safety and quality standards.",
+    t('landing.about.benefits.b1'),
+    t('landing.about.benefits.b2'),
+    t('landing.about.benefits.b3'),
+    t('landing.about.benefits.b4'),
   ];
 
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      role: "Wheat Farmer, Punjab",
+      name: t('landing.testimonials.t1.name'),
+      role: t('landing.testimonials.t1.role'),
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
-      quote: "KrishiRakshak saved my entire wheat crop from a pest outbreak. The AI identified the problem before it spread!",
+      quote: t('landing.testimonials.t1.quote'),
       rating: 5,
     },
     {
-      name: "Priya Sharma",
-      role: "Cotton Farmer, Gujarat",
+      name: t('landing.testimonials.t2.name'),
+      role: t('landing.testimonials.t2.role'),
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
-      quote: "The real-time alerts helped me take preventive action. My yield increased by 30% this season.",
+      quote: t('landing.testimonials.t2.quote'),
       rating: 5,
     },
     {
-      name: "Amit Patel",
-      role: "Rice Farmer, Bihar",
+      name: t('landing.testimonials.t3.name'),
+      role: t('landing.testimonials.t3.role'),
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
-      quote: "Easy to use, accurate results. This is exactly what Indian farmers needed.",
+      quote: t('landing.testimonials.t3.quote'),
       rating: 5,
     },
   ];
 
   const teamMembers = [
     {
-      name: "Dr. Ananya Verma",
-      role: "Co-Founder & CEO",
+      name: t('landing.team.member1.name'),
+      role: t('landing.team.member1.role'),
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
-      bio: "Former ICAR scientist with 15+ years in agricultural research. PhD in Entomology.",
+      bio: t('landing.team.member1.bio'),
       linkedin: "#",
       twitter: "#",
     },
     {
-      name: "Vikram Singh",
-      role: "CTO & AI Lead",
+      name: t('landing.team.member2.name'),
+      role: t('landing.team.member2.role'),
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
-      bio: "Ex-Google ML engineer. Built AI systems processing 10M+ images daily.",
+      bio: t('landing.team.member2.bio'),
       linkedin: "#",
       twitter: "#",
     },
     {
-      name: "Meera Krishnan",
-      role: "Head of Agriculture",
+      name: t('landing.team.member3.name'),
+      role: t('landing.team.member3.role'),
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
-      bio: "Agricultural extension expert. Worked with 50,000+ farmers across India.",
+      bio: t('landing.team.member3.bio'),
       linkedin: "#",
       twitter: "#",
     },
@@ -245,20 +245,20 @@ const Index = () => {
 
   const faqs = [
     {
-      question: "How accurate is the AI pest detection?",
-      answer: "Our AI achieves 95%+ accuracy on common agricultural pests. The system continuously learns from new data to improve detection rates.",
+      question: t('landing.faq.q1.question'),
+      answer: t('landing.faq.q1.answer'),
     },
     {
-      question: "What crops does KrishiRakshak support?",
-      answer: "We support all major Indian crops including wheat, rice, cotton, sugarcane, vegetables, and fruits. New crops are added regularly.",
+      question: t('landing.faq.q2.question'),
+      answer: t('landing.faq.q2.answer'),
     },
     {
-      question: "Is there a mobile app available?",
-      answer: "Yes! Our mobile app is available for both Android and iOS, allowing you to identify pests directly from the field.",
+      question: t('landing.faq.q3.question'),
+      answer: t('landing.faq.q3.answer'),
     },
     {
-      question: "How do I get started?",
-      answer: "Simply register for a free account, upload an image of your affected crop, and get instant AI-powered recommendations.",
+      question: t('landing.faq.q4.question'),
+      answer: t('landing.faq.q4.answer'),
     },
   ];
 
@@ -294,38 +294,39 @@ const Index = () => {
                 className="text-sm font-medium text-[#FFD24A] transition-colors"
                 whileHover={{ y: -2 }}
               >
-                Home
+                {t('landing.nav.home')}
               </motion.a>
               <motion.a
                 href="#about"
                 className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors"
                 whileHover={{ y: -2 }}
               >
-                About
+                {t('landing.nav.about')}
               </motion.a>
               <motion.a
                 href="#features"
                 className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors"
                 whileHover={{ y: -2 }}
               >
-                Features
+                {t('landing.nav.features')}
               </motion.a>
               <motion.a
                 href="#how-it-works"
                 className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors"
                 whileHover={{ y: -2 }}
               >
-                How It Works
+                {t('landing.nav.howItWorks')}
               </motion.a>
               <motion.a
                 href="#team"
                 className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors"
                 whileHover={{ y: -2 }}
               >
-                Team
+                {t('landing.nav.team')}
               </motion.a>
               <Link to="/contact" className="text-sm font-medium text-white hover:text-[#FFD24A] transition-colors">
-                Contact
+                {t('landing.nav.contact')}
+
               </Link>
             </div>
 
@@ -338,7 +339,7 @@ const Index = () => {
                   whileTap={{ scale: 0.98 }}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#B9F261] text-[#0B0B0B] font-medium text-sm hover:bg-[#a8e050] transition-all shadow-lg"
                 >
-                  Sign In
+                  {t('landing.nav.signIn')}
                   <div className="w-6 h-6 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                     <ArrowRight className="w-3.5 h-3.5 text-white" />
                   </div>
@@ -380,7 +381,7 @@ const Index = () => {
                     <Star key={i} className="w-4 h-4 fill-[#FFD24A] text-[#FFD24A]" />
                   ))}
                 </div>
-                <span className="text-sm font-medium text-white/80">100+ Reviews</span>
+                <span className="text-sm font-medium text-white/80">{t('landing.hero.rating')}</span>
               </motion.div>
 
               {/* Heading */}
@@ -390,9 +391,9 @@ const Index = () => {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 text-white"
               >
-                Smart Pest Solutions for
+                {t('landing.hero.heading')}
                 <br />
-                <em className="font-normal italic">Homes &amp; Farms</em>
+                <em className="font-normal italic">{t('landing.hero.headingItalic')}</em>
               </motion.h1>
 
               {/* Description */}
@@ -402,7 +403,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-lg text-white/70 max-w-md mb-8 leading-relaxed"
               >
-                KrishiRakshak delivers AI-powered pest identification and management solutions for farms and gardens. Easy setup, lasting results.
+                {t('landing.hero.description')}
               </motion.p>
 
               {/* CTA Buttons */}
@@ -418,7 +419,7 @@ const Index = () => {
                     whileTap={{ scale: 0.98 }}
                     className="flex items-center gap-3 px-8 py-4 rounded-full bg-[#B9F261] text-[#0B0B0B] font-semibold text-base hover:bg-[#a8e050] transition-all shadow-lg shadow-[#B9F261]/30"
                   >
-                    Get Started
+                    {t('landing.hero.getStarted')}
                     <div className="w-7 h-7 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                       <ArrowRight className="w-4 h-4 text-white" />
                     </div>
@@ -430,7 +431,7 @@ const Index = () => {
                     whileTap={{ scale: 0.98 }}
                     className="flex items-center gap-2 px-8 py-4 rounded-full bg-transparent border-2 border-white/30 text-white font-semibold text-base transition-all"
                   >
-                    View Features
+                    {t('landing.hero.viewFeatures')}
                     <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center">
                       <ArrowRight className="w-4 h-4 text-white" />
                     </div>
@@ -446,20 +447,48 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="hidden lg:flex flex-col items-end gap-4"
             >
-              {["25-Year Panel Warranty", "Certified Installers", "Free Energy Consultation"].map((chip, i) => (
+              <Link to="/about">
                 <motion.span
-                  key={i}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.6 + i * 0.1 }}
-                  className="px-5 py-3 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-sm font-medium text-white flex items-center gap-2"
+                  transition={{ duration: 0.4, delay: 0.6 }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                  className="px-5 py-3 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-sm font-medium text-white flex items-center gap-2 cursor-pointer"
                 >
                   <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
                     <ArrowRight className="w-3 h-3 text-white" />
                   </div>
-                  {chip}
+                  {t('landing.hero.chips.warranty')}
                 </motion.span>
-              ))}
+              </Link>
+              <Link to="/register">
+                <motion.span
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.7 }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                  className="px-5 py-3 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-sm font-medium text-white flex items-center gap-2 cursor-pointer"
+                >
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                    <ArrowRight className="w-3 h-3 text-white" />
+                  </div>
+                  {t('landing.hero.chips.certified')}
+                </motion.span>
+              </Link>
+              <Link to="/contact">
+                <motion.span
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.8 }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.15)' }}
+                  className="px-5 py-3 rounded-full border border-white/30 bg-white/5 backdrop-blur-sm text-sm font-medium text-white flex items-center gap-2 cursor-pointer"
+                >
+                  <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                    <ArrowRight className="w-3 h-3 text-white" />
+                  </div>
+                  {t('landing.hero.chips.consultation')}
+                </motion.span>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -514,11 +543,11 @@ const Index = () => {
         <div className="container mx-auto px-6 mb-10 relative z-10">
           <div className="flex items-center justify-center gap-3 mb-2">
             <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#B9F261]"></div>
-            <span className="text-[#B9F261] text-sm font-medium uppercase tracking-widest">Partners</span>
+            <span className="text-[#B9F261] text-sm font-medium uppercase tracking-widest">{t('landing.partners.label')}</span>
             <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#B9F261]"></div>
           </div>
           <h3 className="text-center text-2xl md:text-3xl font-display font-bold text-white">
-            Trusted by Top Agriculture Leaders
+            {t('landing.partners.title')}
           </h3>
         </div>
         <div className="relative">
@@ -550,20 +579,20 @@ const Index = () => {
           >
             <motion.div variants={fadeInUp} className="flex items-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-              <span className="text-sm font-medium text-gray-600">Pest &amp; Crop Solutions</span>
+              <span className="text-sm font-medium text-gray-600">{t('landing.features.label')}</span>
             </motion.div>
             <div className="grid lg:grid-cols-2 gap-8">
               <motion.h2
                 variants={fadeInLeft}
                 className="font-display text-4xl md:text-5xl font-bold text-[#0B0B0B]"
               >
-                Pest Solutions for Every Farm
+                {t('landing.features.title')}
               </motion.h2>
               <motion.p
                 variants={fadeInRight}
                 className="text-gray-600 leading-relaxed self-center"
               >
-                We provide complete pest management services for farms &amp; gardens, including identification, advisories, &amp; preventive monitoring.
+                {t('landing.features.description')}
               </motion.p>
             </div>
           </motion.div>
@@ -642,7 +671,7 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="text-3xl font-display font-bold text-[#FFD24A]">12,500+</p>
-                    <p className="text-sm text-white/70">Completed Projects</p>
+                    <p className="text-sm text-white/70">{t('landing.about.completedProjects')}</p>
                   </div>
                 </div>
               </div>
@@ -652,11 +681,11 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-                <span className="text-sm font-medium text-gray-600">About KrishiRakshak</span>
+                <span className="text-sm font-medium text-gray-600">{t('landing.about.label')}</span>
               </div>
 
               <h2 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-8 text-[#0B0B0B]">
-                A Team Focused on Clean Agriculture
+                {t('landing.about.title')}
               </h2>
 
               <div className="space-y-4 mb-8">
@@ -679,7 +708,7 @@ const Index = () => {
 
               <Link to="/register">
                 <Button size="lg" className="rounded-full px-8 gap-3 bg-[#B9F261] text-[#0B0B0B] hover:bg-[#a8e050]">
-                  More Details
+                  {t('landing.about.moreDetails')}
                   <div className="w-7 h-7 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-white" />
                   </div>
@@ -696,13 +725,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-              <span className="text-sm font-medium text-gray-600">Our Process</span>
+              <span className="text-sm font-medium text-gray-600">{t('landing.howItWorks.label')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-[#0B0B0B]">
-              How It Works
+              {t('landing.howItWorks.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Get pest identification and expert recommendations in three simple steps.
+              {t('landing.howItWorks.description')}
             </p>
           </div>
 
@@ -748,13 +777,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-              <span className="text-sm font-medium text-gray-400">Platform Features</span>
+              <span className="text-sm font-medium text-gray-400">{t('landing.moreFeatures.label')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-white">
-              Everything You Need
+              {t('landing.moreFeatures.title')}
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Comprehensive tools and features to protect your crops and maximize yield.
+              {t('landing.moreFeatures.description')}
             </p>
           </div>
 
@@ -786,13 +815,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-              <span className="text-sm font-medium text-gray-600">Our Team</span>
+              <span className="text-sm font-medium text-gray-600">{t('landing.team.label')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-[#0B0B0B]">
-              Meet the Experts
+              {t('landing.team.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our team combines deep agricultural expertise with cutting-edge AI technology.
+              {t('landing.team.description')}
             </p>
           </div>
 
@@ -839,13 +868,13 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-              <span className="text-sm font-medium text-gray-600">Testimonials</span>
+              <span className="text-sm font-medium text-gray-600">{t('landing.testimonials.label')}</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-[#0B0B0B]">
-              What Farmers Say
+              {t('landing.testimonials.title')}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Hear from farmers who have transformed their pest management with our AI solutions.
+              {t('landing.testimonials.description')}
             </p>
           </div>
 
@@ -889,10 +918,10 @@ const Index = () => {
             <div className="text-center mb-16">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="w-2 h-2 rounded-full bg-[#FFD24A]"></span>
-                <span className="text-sm font-medium text-gray-600">FAQ</span>
+                <span className="text-sm font-medium text-gray-600">{t('landing.faq.label')}</span>
               </div>
               <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-[#0B0B0B]">
-                Frequently Asked Questions
+                {t('landing.faq.title')}
               </h2>
             </div>
 
@@ -932,11 +961,11 @@ const Index = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl">
             <h2 className="font-display text-4xl md:text-6xl font-bold leading-tight mb-8 text-white">
-              Ready to Transform Your Farm With AI?
+              {t('landing.cta.title')}
             </h2>
             <Link to="/register">
               <Button size="lg" className="rounded-full px-8 py-6 text-lg gap-3 bg-[#B9F261] text-[#0B0B0B] hover:bg-[#a8e050]">
-                Get Free Assessment
+                {t('landing.cta.button')}
                 <div className="w-8 h-8 rounded-full bg-[#0B0B0B] flex items-center justify-center">
                   <ArrowRight className="w-5 h-5 text-white" />
                 </div>
@@ -975,7 +1004,7 @@ const Index = () => {
                 <span className="font-display font-bold text-xl text-white">KrishiRakshak</span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
-                AI-powered pest management for smarter, sustainable farming. Empowering farmers with cutting-edge technology.
+                {t('landing.footer.description')}
               </p>
               {/* Social Icons */}
               <div className="flex gap-3">
@@ -996,32 +1025,32 @@ const Index = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-display font-bold text-white mb-6">Quick Links</h4>
+              <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.quickLinks')}</h4>
               <ul className="space-y-3">
-                <li><a href="#about" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />About Us</a></li>
-                <li><a href="#features" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Features</a></li>
-                <li><a href="#how-it-works" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />How It Works</a></li>
-                <li><a href="#team" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Our Team</a></li>
-                <li><Link to="/contact" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Contact</Link></li>
+                <li><a href="#about" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.aboutUs')}</a></li>
+                <li><a href="#features" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.features')}</a></li>
+                <li><a href="#how-it-works" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.howItWorks')}</a></li>
+                <li><a href="#team" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.team')}</a></li>
+                <li><Link to="/contact" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.nav.contact')}</Link></li>
               </ul>
             </div>
 
             {/* Services */}
             <div>
-              <h4 className="font-display font-bold text-white mb-6">Services</h4>
+              <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.services')}</h4>
               <ul className="space-y-3">
-                <li><Link to="/identify" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Pest Detection</Link></li>
-                <li><Link to="/chat" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />AI Chat Assistant</Link></li>
-                <li><Link to="/alerts" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Weather Alerts</Link></li>
-                <li><Link to="/advisory" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Expert Advisory</Link></li>
-                <li><Link to="/community" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />Community</Link></li>
+                <li><Link to="/identify" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.pestDetection')}</Link></li>
+                <li><Link to="/chat" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.aiChatAssistant')}</Link></li>
+                <li><Link to="/alerts" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.weatherAlerts')}</Link></li>
+                <li><Link to="/advisory" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.expertAdvisory')}</Link></li>
+                <li><Link to="/community" className="text-white/60 hover:text-[#B9F261] transition-colors flex items-center gap-2"><ChevronRight className="w-3 h-3" />{t('landing.footer.community')}</Link></li>
               </ul>
             </div>
 
             {/* Newsletter */}
             <div>
-              <h4 className="font-display font-bold text-white mb-6">Stay Updated</h4>
-              <p className="text-white/60 text-sm mb-4">Subscribe to our newsletter for the latest updates on pest management.</p>
+              <h4 className="font-display font-bold text-white mb-6">{t('landing.footer.stayUpdated')}</h4>
+              <p className="text-white/60 text-sm mb-4">{t('landing.footer.newsletterDesc')}</p>
               <div className="space-y-3">
                 <input
                   type="email"
@@ -1029,10 +1058,10 @@ const Index = () => {
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-[#B9F261] focus:bg-white/10 transition-all"
                 />
                 <Button className="w-full rounded-xl py-3 bg-[#B9F261] text-[#0B0B0B] hover:bg-[#a8e050] font-semibold">
-                  Subscribe Now
+                  {t('landing.footer.subscribeNow')}
                 </Button>
               </div>
-              <p className="text-white/40 text-xs mt-3">We respect your privacy. Unsubscribe anytime.</p>
+              <p className="text-white/40 text-xs mt-3">{t('landing.footer.privacyNote')}</p>
             </div>
           </div>
 
@@ -1040,20 +1069,20 @@ const Index = () => {
           <div className="pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-white/40 text-sm">
-                © 2025 KrishiRakshak. All rights reserved.
+                {t('landing.footer.copyright')}
               </p>
               <div className="flex gap-6 text-white/40 text-sm">
-                <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-white transition-colors">Cookie Policy</a>
+                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.privacyPolicy')}</a>
+                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.termsOfService')}</a>
+                <a href="#" className="hover:text-white transition-colors">{t('landing.footer.cookiePolicy')}</a>
               </div>
             </div>
           </div>
         </div>
-      </footer >
+      </footer>
 
       {/* Floating Chat */}
-      < Link to="/chat" >
+      <Link to="/chat">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
@@ -1061,10 +1090,10 @@ const Index = () => {
         >
           <MessageCircle className="w-6 h-6" />
         </motion.button>
-      </Link >
+      </Link>
 
       {/* CSS Animation for Scrolling Logos */}
-      < style > {`
+      <style>{`
         @keyframes scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -1073,8 +1102,8 @@ const Index = () => {
           animation: scroll 30s linear infinite;
           width: max-content;
         }
-      `}</style >
-    </div >
+      `}</style>
+    </div>
   );
 };
 

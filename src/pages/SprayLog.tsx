@@ -88,20 +88,40 @@ const SprayLog = () => {
     fetchCrops();
   }, [user]);
 
+  // Helper to get auth token
+  const getAuthToken = () => {
+    const directToken = localStorage.getItem('token');
+    if (directToken) return directToken;
+    const session = localStorage.getItem('session');
+    if (session) {
+      try { return JSON.parse(session).access_token; } catch { return null; }
+    }
+    return null;
+  };
+
   const fetchLogs = async () => {
     if (!user) return;
 
+    const token = getAuthToken();
+    if (!token) {
+      console.warn('No auth token - user may not be logged in');
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      const token = JSON.parse(localStorage.getItem('session') || '{}').access_token;
       const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/spray-logs`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
       const data = await response.json();
-      setLogs(data || []);
+      // Ensure data is an array
+      setLogs(Array.isArray(data) ? data : []);
     } catch (error: any) {
+      console.error('Error fetching spray logs:', error);
       toast({ title: "Error loading logs", description: error.message, variant: "destructive" });
+      setLogs([]);
     }
     setIsLoading(false);
   };
@@ -148,7 +168,7 @@ const SprayLog = () => {
     setIsSaving(true);
 
     try {
-      const token = JSON.parse(localStorage.getItem('session') || '{}').access_token;
+      const token = getAuthToken();
       const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/spray-logs`, {
         method: 'POST',
         headers: {
@@ -179,7 +199,7 @@ const SprayLog = () => {
 
   const handleDeleteLog = async (id: string) => {
     try {
-      const token = JSON.parse(localStorage.getItem('session') || '{}').access_token;
+      const token = getAuthToken();
       const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/spray-logs/${id}`, {
         method: 'DELETE',
         headers: {

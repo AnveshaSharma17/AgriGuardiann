@@ -15,10 +15,10 @@ const cropsData = [
     { name: 'Maize', name_hi: 'मक्का' },
     { name: 'Sugarcane', name_hi: 'गन्ना' },
     { name: 'Tomato', name_hi: 'टमाटर' },
-    { name: 'Potato', name_hi: 'आलू' },
-    { name: 'Chickpea', name_hi: 'चना' },
-    { name: 'Mustard', name_hi: 'सरसों' },
-    { name: 'Groundnut', name_hi: 'मूंगफली' }
+    { name: 'Potato', name_hi: 'आलू', stages: ['seedling', 'vegetative', 'flowering', 'maturity', 'harvest'] },
+    { name: 'Chickpea', name_hi: 'चना', stages: ['seedling', 'vegetative', 'flowering', 'fruiting', 'maturity', 'harvest'] },
+    { name: 'Mustard', name_hi: 'सरसों', stages: ['seedling', 'vegetative', 'flowering', 'fruiting', 'maturity', 'harvest'] },
+    { name: 'Groundnut', name_hi: 'मूंगफली', stages: ['seedling', 'vegetative', 'flowering', 'fruiting', 'maturity', 'harvest'] }
 ];
 
 // Comprehensive pest database for major crops (35+ pests)

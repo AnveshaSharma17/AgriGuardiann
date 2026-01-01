@@ -13,8 +13,8 @@ const userCropSchema = new mongoose.Schema({
     },
     stage: {
         type: String,
-        default: 'seedling',
-        enum: ['seedling', 'vegetative', 'flowering', 'fruiting', 'harvest', 'maturity']
+        default: 'seedling'
+        // Removed enum to allow dynamic stages per crop
     },
     is_active: {
         type: Boolean,

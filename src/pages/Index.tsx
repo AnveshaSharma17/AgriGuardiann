@@ -196,21 +196,21 @@ const Index = () => {
     {
       name: t('landing.testimonials.t1.name'),
       role: t('landing.testimonials.t1.role'),
-      image: "https://i.pinimg.com/736x/3a/b4/c6/3ab4c6eee63b6be02e4e8078fa2b561a.jpg",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
       quote: t('landing.testimonials.t1.quote'),
       rating: 5,
     },
     {
       name: t('landing.testimonials.t2.name'),
       role: t('landing.testimonials.t2.role'),
-      image: "https://i.pinimg.com/736x/f2/df/d4/f2dfd48659267c1a5119d93af500e33a.jpg",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
       quote: t('landing.testimonials.t2.quote'),
       rating: 5,
     },
     {
       name: t('landing.testimonials.t3.name'),
       role: t('landing.testimonials.t3.role'),
-      image: "https://i.pinimg.com/736x/d2/7e/91/d27e91a0eefd866d4f8ab64b4de1e742.jpg",
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
       quote: t('landing.testimonials.t3.quote'),
       rating: 5,
     },
@@ -220,7 +220,7 @@ const Index = () => {
     {
       name: t('landing.team.member1.name'),
       role: t('landing.team.member1.role'),
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/3a/b4/c6/3ab4c6eee63b6be02e4e8078fa2b561a.jpg",
       bio: t('landing.team.member1.bio'),
       linkedin: "#",
       twitter: "#",
@@ -228,7 +228,7 @@ const Index = () => {
     {
       name: t('landing.team.member2.name'),
       role: t('landing.team.member2.role'),
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/f2/df/d4/f2dfd48659267c1a5119d93af500e33a.jpg",
       bio: t('landing.team.member2.bio'),
       linkedin: "#",
       twitter: "#",
@@ -236,7 +236,7 @@ const Index = () => {
     {
       name: t('landing.team.member3.name'),
       role: t('landing.team.member3.role'),
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop",
+      image: "https://i.pinimg.com/736x/d2/7e/91/d27e91a0eefd866d4f8ab64b4de1e742.jpg",
       bio: t('landing.team.member3.bio'),
       linkedin: "#",
       twitter: "#",

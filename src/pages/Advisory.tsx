@@ -88,7 +88,7 @@ const Advisory = () => {
                         Authorization: `Bearer ${localStorage.getItem("token")}`,
                     },
                     body: JSON.stringify({
-                        pest: topPest.pestName,
+                        pest: topPest.name || topPest.pestName || 'Unknown pest',
                         crop: crop || pestResults.cropDetected || "unknown",
                         severity: topPest.severity || "moderate",
                         symptoms: pestResults.observedSymptoms || [],
@@ -118,8 +118,9 @@ const Advisory = () => {
 
     const setFallbackAdvisory = () => {
         const topPest = pestResults.predictions[0];
+        const pestName = topPest.name || topPest.pestName || 'the identified pest';
         setAdvisory({
-            summary: `Basic management recommendations for ${topPest.pestName}. Consult with a local agricultural expert for specific advice.`,
+            summary: `Basic management recommendations for ${pestName}. Consult with a local agricultural expert for specific advice.`,
             chemicalControl: [
                 "Apply recommended insecticides as per label instructions",
                 "Rotate pesticide types to prevent resistance",
@@ -224,7 +225,7 @@ const Advisory = () => {
                                             <Bug className="w-6 h-6 text-[#FFD24A]" />
                                         </div>
                                         <h2 className="font-display font-bold text-3xl text-[#0B0B0B]">
-                                            {topPest.pestName}
+                                            {topPest.name || topPest.pestName || 'Unknown Pest'}
                                         </h2>
                                     </div>
                                     <div className="flex flex-wrap gap-2 mb-3">

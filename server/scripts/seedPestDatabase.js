@@ -1308,11 +1308,12 @@ async function seedPestDatabase() {
         console.log('📋 Seeding crops...');
         const cropMap = {};
         for (const cropData of cropsData) {
-            let crop = await Crop.findOne({ name: cropData.name });
-            if (!crop) {
-                crop = await Crop.create(cropData);
-                console.log(`✓ Created crop: ${cropData.name}`);
-            }
+            const crop = await Crop.findOneAndUpdate(
+                { name: cropData.name },
+                { $set: cropData },
+                { upsert: true, new: true }
+            );
+            console.log(`✓ Upserted crop: ${cropData.name} (stages: ${crop.stages?.length || 0})`);
             cropMap[cropData.name] = crop._id;
         }
 

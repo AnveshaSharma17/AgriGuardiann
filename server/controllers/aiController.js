@@ -486,7 +486,7 @@ CRITICAL GUIDELINES:
 4. Consider Indian farming context and local availability
 5. Be practical and cost-effective`;
 
-        const userPrompt = `Generate a comprehensive pest management advisory for:
+        const userPrompt = `Generate a pest management advisory for:
         
 Pest: ${pest}
 Crop: ${crop || 'general crops'}
@@ -494,66 +494,59 @@ Severity: ${severity || 'moderate'}
 Observed Symptoms: ${symptoms && symptoms.length > 0 ? symptoms.join(', ') : 'not specified'}
 Confidence Level: ${confidence ? Math.round(confidence) + '%' : 'unknown'}
 
-Provide a detailed advisory with these sections:
+IMPORTANT: Keep each point SHORT and CONCISE (max 8-10 words per point). No lengthy explanations.
 
-1. SUMMARY: Brief overview of the pest threat and recommended approach (2-3 sentences)
+Provide advisory with these sections:
 
-2. CHEMICAL CONTROL: List 3-4 specific chemical pesticides or methods with:
-   - Product type or active ingredient
-   - Application method
-   - Timing
-   - Safety precautions
+1. SUMMARY: 1-2 sentence overview only
 
-3. BIOLOGICAL CONTROL: List 3-4 natural/biological methods:
-   - Natural predators to encourage
-   - Bio-pesticides available in India
-   - Beneficial organisms
+2. CHEMICAL CONTROL: 5 short points (e.g., "Apply neem oil spray weekly")
 
-4. CULTURAL CONTROL: List 3-4 farming practices:
-   - Crop management techniques
-   - Field sanitation
-   - Water/nutrient management
-   - Plant spacing
+3. BIOLOGICAL CONTROL: 5 short points (e.g., "Introduce ladybugs as natural predators")
 
-5. PREVENTION: List 3-4 preventive strategies:
-   - Early detection methods
-   - Resistant varieties
-   - Buffer crops
-   - Seasonal timing
+4. CULTURAL CONTROL: 5 short points (e.g., "Remove infected plant debris daily")
 
-6. MONITORING: List 3-4 monitoring recommendations:
-   - Frequency of inspection
-   - What to look for
-   - Threshold levels
-   - Record keeping
+5. PREVENTION: 5 short points (e.g., "Use resistant crop varieties")
+
+6. MONITORING: 5 short points (e.g., "Inspect plants twice weekly")
 
 Format as JSON:
 {
-  "summary": "Brief overview",
-  "chemicalControl": ["method 1", "method 2", "method 3"],
-  "biologicalControl": ["method 1", "method 2", "method 3"],
-  "culturalControl": ["practice 1", "practice 2", "practice 3"],
-  "prevention": ["strategy 1", "strategy 2", "strategy 3"],
-  "monitoring": ["recommendation 1", "recommendation 2", "recommendation 3"]
+  "summary": "Brief 1-2 sentence overview",
+  "chemicalControl": ["point1", "point2", "point3", "point4", "point5"],
+  "biologicalControl": ["point1", "point2", "point3", "point4", "point5"],
+  "culturalControl": ["point1", "point2", "point3", "point4", "point5"],
+  "prevention": ["point1", "point2", "point3", "point4", "point5"],
+  "monitoring": ["point1", "point2", "point3", "point4", "point5"]
 }`;
 
-        // Call Groq AI
-        const aiData = await callAI(systemPrompt, userPrompt, {
-            model: 'openai/gpt-oss-120b',
-            temperature: 0.6
-        });
-
-        const aiResponseText = aiData.choices?.[0]?.message?.content;
-
-        console.log('[Advisory] AI response received');
-
-        // Parse response
+        // Call Groq AI with fallback
         let advisory;
         try {
-            advisory = parseAIResponse(aiResponseText);
-        } catch (error) {
-            console.error('[Advisory] Parse error:', error);
-            // Fallback advisory
+            const aiData = await callAI(systemPrompt, userPrompt, {
+                model: 'openai/gpt-oss-120b',  // Changed back to original model
+                temperature: 0.6
+            });
+
+            const aiResponseText = aiData.choices?.[0]?.message?.content;
+
+            console.log('[Advisory] AI response received');
+
+            // Parse response
+            try {
+                advisory = parseAIResponse(aiResponseText);
+            } catch (parseError) {
+                console.error('[Advisory] Parse error:', parseError);
+                advisory = null;
+            }
+        } catch (aiError) {
+            console.error('[Advisory] AI call failed:', aiError.message);
+            advisory = null;
+        }
+
+        // Use fallback if AI failed or response couldn't be parsed
+        if (!advisory || !advisory.summary) {
+            console.log('[Advisory] Using fallback advisory');
             advisory = {
                 summary: `Integrated Pest Management advisory for ${pest}. Follow IPM principles starting with prevention and cultural controls before considering chemical options.`,
                 chemicalControl: [
@@ -589,14 +582,18 @@ Format as JSON:
             };
         }
 
-        // Log AI interaction
-        if (req.userId) {
-            await AILog.create({
-                user_id: req.userId,
-                type: 'advisory',
-                input_summary: `Advisory for ${pest} on ${crop}`,
-                output_summary: advisory.summary?.substring(0, 200)
-            });
+        // Log AI interaction (don't let logging errors crash the response)
+        try {
+            if (req.userId) {
+                await AILog.create({
+                    user_id: req.userId,
+                    type: 'advisory',
+                    input_summary: `Advisory for ${pest || 'unknown pest'} on ${crop || 'unknown crop'}`,
+                    output_summary: advisory.summary?.substring(0, 200) || 'Fallback advisory'
+                });
+            }
+        } catch (logError) {
+            console.error('[Advisory] AILog error (non-fatal):', logError.message);
         }
 
         console.log('[Advisory] Sending advisory response');

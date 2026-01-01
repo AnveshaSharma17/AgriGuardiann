@@ -906,7 +906,7 @@ const Identify = () => {
                       <p className="font-medium text-sm text-gray-500">AI Predictions:</p>
                       {aiResults.predictions.map((pred: any, index: number) => (
                         <motion.div
-                          key={pred.name}
+                          key={`pred-${index}-${pred.name || pred.pestName}`}
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: index * 0.1 }}
